@@ -239,16 +239,18 @@
 	<script src="../assets/plugin/chart/plot/jquery.flot.pie.min.js"></script>
 	<script src="../assets/plugin/chart/plot/jquery.flot.stack.min.js"></script>
 	<script src="../assets/scripts/chart.flot.init.min.js"></script>
-
 	<!-- Sparkline Chart -->
 	<script src="../assets/plugin/chart/sparkline/jquery.sparkline.min.js"></script>
 	<script src="../assets/scripts/chart.sparkline.init.min.js"></script>
-
 	<!-- FullCalendar -->
 	<script src="../assets/plugin/moment/moment.js"></script>
 	<script src="../assets/plugin/fullcalendar/fullcalendar.min.js"></script>
 	<script src="../assets/scripts/fullcalendar.init.js"></script>
-
 	<script src="../assets/scripts/main.min.js"></script>
+		<!-- Hightcharts -->
+	<script src="../assets/plugin/chart/highcharts/highcharts.js"></script>
+	<script src="../assets/plugin/chart/highcharts/highcharts-3d.js"></script>
+	<script src="../assets/plugin/chart/highcharts/themes/grid-light.js"></script>
+	<script src="../assets/scripts/chart.highcharts.init.min.js"></script>
 </body>
 </html>

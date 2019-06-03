@@ -12,7 +12,7 @@
 			<!-- /.title -->
 			<ul class="menu js__accordion">
 				<li class="current">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+					<a class="waves-effect" href="../cmmn/layouts.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
 				</li>
 				<li class="">
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>다미</span></a>
@@ -24,7 +24,7 @@
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>소희</span></a>
 				</li>
 				<li class="">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>수지</span></a>
+					<a class="waves-effect" href="../consumption/consumption.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>수지</span></a>
 				</li>
 				<li class="">
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>성환</span></a>
