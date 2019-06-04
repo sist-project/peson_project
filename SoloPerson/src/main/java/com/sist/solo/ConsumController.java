@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ConsumController {
 	
-	@RequestMapping("consumption/consumption.do")
+	@RequestMapping("consum/consum.do")
 	public String mainController() {
 		
-		return "consumption/consumption";
+		return "consum/consum";
 	}
 	
 }

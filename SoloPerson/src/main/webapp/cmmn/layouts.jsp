@@ -206,6 +206,7 @@
 <!-- /#message-popup -->
 <div id="wrapper">
 	<div class="main-content">
+		
 		<tiles:insertAttribute name="content"/>
 		<tiles:insertAttribute name="footer"/>
 	</div>
