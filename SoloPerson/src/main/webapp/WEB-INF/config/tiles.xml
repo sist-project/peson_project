@@ -12,6 +12,6 @@
 	</definition>
 	
 	<definition name="*/*" extends="layouts">
-		<put-attribute name="content" value="/{1}/{2}.jsp"/> <!-- definition태그의 첫번째 *이 {1} -->
+		<put-attribute name="content" value="/{1}/{2}.jsp"/>  <!-- definition태그의 첫번째 *이 {1} -->
 	</definition>
 </tiles-definitions>
