@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 	
-	@RequestMapping("cmmn/layouts.do")
+	@RequestMapping("main/main.do")
 	public String mainController() {
 		
 		return "main/main";

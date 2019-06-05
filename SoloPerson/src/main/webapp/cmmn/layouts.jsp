@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Solo Person</title>
+	<title>One Person Household</title>
 	<!-- Main Styles -->
 	<link rel="stylesheet" href="../assets/styles/style.min.css">
 	<!-- Material Design Icon -->
@@ -25,6 +25,8 @@
 	<!-- FullCalendar -->
 	<link rel="stylesheet" href="../assets/plugin/fullcalendar/fullcalendar.min.css">
 	<link rel="stylesheet" href="../assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
+	<script src="../assets/scripts/jquery.min.js"></script>	<!-- 제이쿼리 라이브러리  -->
+	
 </head>
 
 <body>

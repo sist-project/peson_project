@@ -4,15 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<script type="text/javascript">
+	$(function() {
+		$('.waves-effect').click(function() {
+			console.log($(this).parent().html());
+			$(this).parent().addClass('current');
+		});
+	});
+</script>
 </head>
 <body>
 <div class="navigation">
-			<h5 class="title">Navigation</h5>
+			<h5 class="title">Menu</h5>
 			<!-- /.title -->
 			<ul class="menu js__accordion">
-				<li class="current">
-					<a class="waves-effect" href="../cmmn/layouts.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+				<li class="">
+					<a class="waves-effect" href="../main/main.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>1인 가구 통계</span></a>
 				</li>
 				<li class="">
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>다미</span></a>

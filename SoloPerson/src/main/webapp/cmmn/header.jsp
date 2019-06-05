@@ -8,7 +8,7 @@
 </head>
 <body>
 <header class="header">
-		<a href="index.html" class="logo"><i class="ico mdi mdi-cube-outline"></i>MyAdmin</a>
+		<a href="../main/main.do" class="logo"><i class="ico mdi mdi-cube-outline"></i>One Person</a>
 		<button type="button" class="button-close fa fa-times js__menu_close"></button>
 		<div class="user">
 			<a href="#" class="avatar"><img src="../assets/images/avatar-sm-5.jpg" alt=""><span class="status online"></span></a>

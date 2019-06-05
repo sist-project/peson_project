@@ -9,10 +9,15 @@
 <body>
 <footer class="footer">
 			<ul class="list-inline">
-				<li>2016 © NinjaAdmin.</li>
-				<li><a href="#">Privacy</a></li>
-				<li><a href="#">Terms</a></li>
-				<li><a href="#">Help</a></li>
+				<li>2019 © One Person Hoesehold</li><br>
+				<li>Made By</li> 
+				<li>Rasung</li> 
+				<li>Seonghwan</li> 
+				<li>Dami</li> 
+				<li>Suzy</li> 
+				<li>Sohui</li>
+				<li>Seongjeong</li>
+				<li>Ara</li>
 			</ul>
 		</footer>
 </body>
