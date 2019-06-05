@@ -6,6 +6,7 @@
 	<definition name="layouts" template="/cmmn/layouts.jsp">
 		<put-attribute name="header" value="/cmmn/header.jsp"/>
 		<put-attribute name="aside" value="/cmmn/aside.jsp"/>
+		<put-attribute name="main" value="/main/main.jsp"/>
 		<put-attribute name="nav" value="/cmmn/nav.jsp"/>
 		<put-attribute name="footer" value="/cmmn/footer.jsp"/>
 	</definition>
