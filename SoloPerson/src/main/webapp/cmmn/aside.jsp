@@ -25,7 +25,7 @@
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>다미</span></a>
 				</li>
 				<li class="">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>아라</span></a>
+					<a class="waves-effect" href="../room/room.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>원룸 인테리어</span></a>
 				</li>
 				<li class="">
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>소희</span></a>
