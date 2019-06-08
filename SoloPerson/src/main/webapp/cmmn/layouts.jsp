@@ -255,5 +255,9 @@
 	<script src="../assets/plugin/chart/highcharts/highcharts-3d.js"></script>
 	<script src="../assets/plugin/chart/highcharts/themes/grid-light.js"></script>
 	<script src="../assets/scripts/chart.highcharts.init.min.js"></script>
+		<!-- Jquery Knob -->
+	<script src="../assets/plugin/knob/jquery.knob.min.js"></script>
+	<script src="../assets/scripts/jquery.knob.init.min.js"></script>
+	
 </body>
 </html>
