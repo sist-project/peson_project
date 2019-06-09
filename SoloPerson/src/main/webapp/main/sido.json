@@ -1,0 +1,20 @@
+{"images" : [
+	{"title":"seoul", "url":"../assets/images/main/seoul.png"},
+	{"title":"incheon", "url":"../assets/images/main/incheon.png"},
+	{"title":"gyeonggi", "url":"../assets/images/main/gyeonggi.png"},
+	{"title":"gangwon", "url":"../assets/images/main/gangwon.png"},
+	{"title":"chungcheongbukdo", "url":"../assets/images/main/chungcheongbukdo.png"},
+	{"title":"chungcheongnamdo", "url":"../assets/images/main/chungcheongnamdo.png"},
+	{"title":"sejong", "url":"../assets/images/main/sejong.png"},
+	{"title":"daejeon", "url":"../assets/images/main/daejeon.png"},
+	{"title":"gyeongsangbukdo", "url":"../assets/images/main/gyeongsangbukdo.png"},
+	{"title":"gyeongsangnamdo", "url":"../assets/images/main/gyeongsangnamdo.png"},
+	{"title":"daegu", "url":"../assets/images/main/daegu.png"},
+	{"title":"ulsan", "url":"../assets/images/main/ulsan.png"},
+	{"title":"busan", "url":"../assets/images/main/busan.png"},
+	{"title":"jeollabukdo", "url":"../assets/images/main/jeollabukdo.png"},
+	{"title":"jeollanamdo", "url":"../assets/images/main/jeollanamdo.png"},
+	{"title":"gwangju", "url":"../assets/images/main/gwangju.png"},
+	{"title":"jeju", "url":"../assets/images/main/jeju.png"}
+	
+]}
