@@ -25,7 +25,7 @@
 					<a class="waves-effect" href="../main/main.do?pageName=main"><i class="menu-icon mdi mdi-view-dashboard"></i><span>1인 가구 통계</span></a>
 				</li>
 				<li class="menu1 current">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>다미</span></a>
+					<a class="waves-effect" href="../mart/mart.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>다미</span></a>
 				</li>
 				<li id="room" class="menu1 current">
 					<a class="waves-effect" href="../room/room.do?pageName=room"><i class="menu-icon mdi mdi-view-dashboard"></i><span>원룸 인테리어</span></a>
