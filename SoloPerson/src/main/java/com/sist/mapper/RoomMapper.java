@@ -6,7 +6,10 @@ import org.apache.ibatis.annotations.Select;
 
 import com.sist.vo.*;
 
-public interface Room_categoryMapper {
+public interface RoomMapper {
 	@Select("SELECT * FROM room_category ORDER BY cateno")
 	public List<Room_categoryVO> Room_categoryData();
+	
+	@Select("SELECT * from room_furniture WHERE cateno = #{cateno}")
+	public List<Room_furnitureVO> Room_furnitureData(int cateno);
 }
