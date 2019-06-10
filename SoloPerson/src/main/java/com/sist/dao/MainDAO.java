@@ -1,5 +1,19 @@
 package com.sist.dao;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.sist.mapper.MainMapper;
+import com.sist.vo.GenderAgeVO;
+
+@Repository
 public class MainDAO {
 
+	@Autowired
+	private MainMapper mapper;
+	
+	public List<GenderAgeVO> genderData(String city) {
+		return mapper.genderData(city);
+	}
 }

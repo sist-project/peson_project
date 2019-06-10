@@ -233,7 +233,6 @@
 	<!-- Morris Chart -->
 	<script src="../assets/plugin/chart/morris/morris.min.js"></script>
 	<script src="../assets/plugin/chart/morris/raphael-min.js"></script>
-	<script src="../assets/scripts/chart.morris.init.min.js"></script>
 
 	<!-- Flot Chart -->
 	<script src="../assets/plugin/chart/plot/jquery.flot.min.js"></script>

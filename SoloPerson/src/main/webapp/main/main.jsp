@@ -5,22 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 <script type="text/javascript">
 $(function() { 
-	// 성별 비율 분포
-	$("#nextBtn").click(function() {
-		$('#bar-morris-chart').bxSlider({
-		
-		});
-	});
-	
-	$("#prevBtn").click(function() {
-		$('#bar-morris-chart').bxSlider({
-	
-		});
-	});
-	
-	
 	// 시도별 비율 분포
 	$(".sidoArea").click(function() {
 		var $this = $(this).attr("id");		
@@ -36,20 +23,87 @@ $(function() {
 						$("#sidoPrint").html("<div class='row'>"
 											+  "<button class='backBtn btn btn-rounded btn-bordered btn-xs waves-effect waves-light' style='position: relative; left: 300px;'>Back</button>"
 											+"</div>"
-										    +  "<img src=" + $url + " usemap=#seoulMap>");
-						
-					}
-								
-				}
-				
+										    +  "<img src=" + $url + " usemap=#seoulMap>");						
+					}				
+				}		
 			}
 			
 		});
 		
 	});
-	
-	
+		
 });
+
+//성별 비율 분포
+!function(e) {
+	"use strict";
+	var a, r = {};
+	e(document)
+			.ready(
+					function() {
+						return e("#bar-morris-chart").length && r.bar.init()	
+					}), e(window).on(
+			"resize",
+			function() {
+				return e("#bar-morris-chart").length && r.bar.update()			
+			}), r = {
+			
+		bar : {
+			graph : null,
+			data : [ {
+				x : "2010",
+				y : 10,
+				z : 17,
+				a : 9
+			}, {
+				x : "2011",
+				y : 5,
+				z : 14,
+				a : 13
+			}, {
+				x : "2012",
+				y : 5,
+				z : 13,
+				a : 12
+			}, {
+				x : "2013",
+				y : 6,
+				z : 12,
+				a : 5
+			}, {
+				x : "2014",
+				y : 17,
+				z : 8,
+				a : 8
+			}, {
+				x : "2015",
+				y : 10,
+				z : 14,
+				a : 18
+			}, {
+				x : "2016",
+				y : 8,
+				z : 17,
+				a : 14
+			} ],
+			init : function() {
+				return Morris.Bar({
+					element : "bar-morris-chart",
+					behaveLikeLine : !0,
+					data : r.bar.data,
+					barColors : [ "#fcb03b", "#ea65a2", "#566FC9" ],
+					xkey : "x",
+					ykeys : [ "y", "z", "a" ],
+					labels : [ "Series A", "Series B", "Series C" ]
+				}), !1
+			},
+			update : function() {
+				return r.bar.graph.setData(r.bar.data), !1
+			}
+		}
+	}
+}(jQuery);
+
 
 </script>
 <style type="text/css">
@@ -126,7 +180,6 @@ $(function() {
 				</div>
 				<div class="row">
 					<div class="col-lg-4" id="sidoPrint">
-
 						<img src="../assets/images/main/south_korea.jpg" width="233" usemap="#koreaMap">
 						<map name="koreaMap" id="koreaMap">
 							<area id="seoul" class="sidoArea" shape="rect" coords="61,60,73,80">
@@ -146,8 +199,7 @@ $(function() {
 							<area id="jeollanamdo" class="sidoArea" shape="rect" coords="36,260,50,277">
 							<area id="gwangju" class="sidoArea" shape="rect" coords="52,240,64,257">
 							<area id="jeju" class="sidoArea" shape="rect" coords="37,334,50,350">
-						</map>	
-								
+						</map>									
 					</div>
 					<div class="col-lg-4 text-center">
 						<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년</h4>
