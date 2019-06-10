@@ -7,18 +7,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-div.thead > img{
+div.thead>img {
 	height: 100%;
 }
 
-div.box-contact > img.cate_img {
+div.box-contact>img.cate_img {
 	border-radius: 0%;
 	top: 7px;
 }
-.small-spacing div.cate_container{
+
+.small-spacing div.cate_container {
 	padding: 60px 20px 60px 20px;
 	margin-top: 10px;
-}    
+}
 </style>
 </head>
 <body>
@@ -51,17 +52,14 @@ div.box-contact > img.cate_img {
 			<c:forEach begin="1" end="5">
 				<div class="col">
 					<div class="thead bg-info">
-						
-							<img src="//oneroommaking.com/web/product/big/201808/cd5e4f117651ef94d61c6bf03204e3e5.jpg">
-						
+
+						<img
+							src="//oneroommaking.com/web/product/big/201808/cd5e4f117651ef94d61c6bf03204e3e5.jpg">
+
 					</div>
 					<div class="td">모노 폴딩 테이블</div>
-					<div class="td">
-						8900원
-					</div>
-					<div class="td">
-						2500원
-					</div>
+					<div class="td">8900원</div>
+					<div class="td">2500원</div>
 					<div class="td">모서리에 안 긁혀서 다행이다</div>
 					<div class="td">
 						<i class="fa fa-times"></i>
