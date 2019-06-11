@@ -36,25 +36,12 @@
 				<li id="consum" class="menu1 current">
 					<a class="waves-effect" href="../consum/consum.do?pageName=consum"><i class="menu-icon mdi mdi-view-dashboard"></i><span>수지</span></a>
 				</li>
-				<li class="menu1 current">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>성환</span></a>
+				<li id="meet" class="menu1 current">
+					<a class="waves-effect" href="../meet/meet_main.do?pageName=meet"><i class="menu-icon mdi mdi-view-dashboard"></i><span>일상-모임</span></a>
 				</li>
 				<li class="menu1 current">
 					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>성정</span></a>
-				</li>
-				<li>
-					<a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-desktop-mac"></i><span>기타</span><span class="menu-arrow fa fa-angle-down"></span></a>
-					<ul class="sub-menu js__content">
-						<li><a href="ui-buttons.html">Buttons</a></li>
-						<li><a href="ui-cards.html">Cards</a></li>
-						<li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
-						<li><a href="ui-components.html">Components</a></li>
-						<li><a href="ui-draggable-cards.html">Draggable Cards</a></li>
-						<li><a href="ui-modals.html">Modals</a></li>
-						<li><a href="ui-typography.html">Typography</a></li>
-					</ul>
-					<!-- /.sub-menu js__content -->
-				</li>
+				</li>				
 			</ul>
 			<!-- /.menu js__accordion -->
 		</div>
