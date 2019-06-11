@@ -31,7 +31,7 @@
 					<a class="waves-effect" href="../room/room.do?pageName=room"><i class="menu-icon mdi mdi-view-dashboard"></i><span>원룸 인테리어</span></a>
 				</li>
 				<li class="menu1 current">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>소희</span></a>
+					<a class="waves-effect" href="../card/card.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>소희</span></a>
 				</li>
 				<li id="consum" class="menu1 current">
 					<a class="waves-effect" href="../consum/consum.do?pageName=consum"><i class="menu-icon mdi mdi-view-dashboard"></i><span>수지</span></a>
