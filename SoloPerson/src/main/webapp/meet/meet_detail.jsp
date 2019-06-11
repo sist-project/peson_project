@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
+
 <style type="text/css">
 .subtitle{
 	font-size: 20px;
@@ -19,6 +22,14 @@
 	width: 300px;
 	height: 300px;
 }
+
+.text-muted{
+	width: 35%;
+	margin: auto;
+	margin-bottom: 30px;
+	font-size: 18px;
+}
+
 </style>
 </head>
 <body>
@@ -31,53 +42,49 @@
 				
 				<!-- /.job -->
 				<div class="text-muted">
-				
 					<table>
+					
 						<tr class="information">
 							<td colspan="2">
 								<table>
-									<tr>
-										<td class="text-left">
-											<i class="fa fa-star text-warning"></i>평점<br>
-											가격<br>
-											위치<br>
-											HOST
-										</td>
-										
-										<td class="text-left" style="padding-left: 100px;">
-											${vo.rate }<br>
-											${vo.price }<br>
-											${vo.loc }<br>
-											${vo.host }
-										</td>
-									</tr>
+									<tbody>
+										<tr>											
+											<td class="text-right">
+												<i class="fa fa-star text-warning"></i> 평점
+											</td>
+											<td class="text-left" style="padding-left: 50px;">
+												${vo.rate}
+											</td>
+										</tr>
+										<tr>											
+											<td class="text-right">
+												<span class="ico ti-money"></span> 가격
+											</td>
+											<td class="text-left" style="padding-left: 50px;">
+												${vo.price}
+											</td>
+										</tr>
+										<tr>											
+											<td class="text-right">
+												<span class="ico ti-location-pin"></span> 위치
+											</td>
+											<td class="text-left" style="padding-left: 50px;">
+												${vo.loc}
+											</td>
+										</tr>
+										<tr>											
+											<td class="text-right">
+												<span class="ico ti-user"></span> HOST
+											</td>
+											<td class="text-left" style="padding-left: 50px;">
+												${vo.host}
+											</td>
+										</tr>
+									</tbody>										
 								</table>
 							</td>
 						</tr>
-					</table>
-						<%-- <table>
-						
-							<tr class="information">
-								<td colspan="2">
-									<table>
-										<tbody>
-											<tr>											
-												<td>
-													<i class="fa fa-star text-warning"></i>평점
-												</td>
-												<td>
-													${vo.rate}<br>
-													${vo.loc }
-												</td>
-											</tr>
-										</tbody>
-										
-									</table>
-								</td>
-							</tr>
-						</table> --%>							
-					
-					
+					</table>	
 				</div>
 				
 				<div class="invoice-box">
