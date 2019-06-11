@@ -67,4 +67,14 @@ public class MeetController {
 		
 		return "meet/meetList";
 	}
+	
+	@RequestMapping("meet/meet_detail.do")
+	public String meet_detail(String mno,Model model)
+	{
+		MeetVO vo=dao.meetDetailData(mno);
+		
+		model.addAttribute("vo",vo);
+		
+		return "meet/meet_detail";
+	}
 }

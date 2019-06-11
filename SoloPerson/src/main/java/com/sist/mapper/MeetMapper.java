@@ -24,5 +24,9 @@ public interface MeetMapper {
 	//지도 검색
 	@Select("SELECT * FROM meet "			
 			+ "WHERE loc LIKE '%'||#{gu}||'%'")
-	public List<MeetVO> meetmapFind(Map map);	
+	public List<MeetVO> meetmapFind(Map map);
+	
+	//상세보기
+	@Select("SELECT * FROM meet WHERE mno=#{mno}")
+	public MeetVO meetDetailData(String mno);
 }

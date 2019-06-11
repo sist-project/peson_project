@@ -5,26 +5,94 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.subtitle{
+	font-size: 20px;
+	color: #a8a8a8;	
+	margin-top: 200px;
+}
+.box-contact .job{
+	font-size: 30px;
+	color: black;	
+}
+.box-contact .avatar{
+	width: 300px;
+	height: 300px;
+}
+</style>
 </head>
 <body>
-	<div class="col-lg-12">
-		<div class="box-contact">
-			<img src="assets/images/profile.jpg" alt="" class="avatar">
-			<h3 class="name margin-top-10">Mat Helme</h3>
-			<!-- /.name -->
-			<h4 class="job">CEO</h4>
-			<!-- /.job -->
-			<div class="text-muted">
-				<p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor error quibusdam officia amet dolores repellendus rem dolorum saepe!</p>
-				<ul class="contact-social list-inline">
-					<li><a href="#" data-toggle="tooltip" data-placement="top" title="+1 23 456 789" class="fa fa-phone"></a></li>
-					<li><a href="#" data-toggle="tooltip" data-placement="top" title="youremail@gmail.com" class="fa fa-envelope"></a></li>
-					<li><a href="#" class="fa fa-facebook"></a></li>
-					<li><a href="#" class="fa fa-twitter"></a></li>
-					<li><a href="#" class="fa fa-google-plus"></a></li>
-				</ul>
+	<div class="row small-spacing">
+		<div class="col-lg-8">
+			<div class="box-contact">
+				<img src="${vo.thumbnail }" alt="" class="avatar">
+				<h4 class="subtitle">${vo.subtitle }</h4>
+				<h3 class="name job">${vo.title }</h3> 
+				
+				<!-- /.job -->
+				<div class="text-muted">
+				
+					<table>
+						<tr class="information">
+							<td colspan="2">
+								<table>
+									<tr>
+										<td class="text-left">
+											<i class="fa fa-star text-warning"></i>평점<br>
+											가격<br>
+											위치<br>
+											HOST
+										</td>
+										
+										<td class="text-left" style="padding-left: 100px;">
+											${vo.rate }<br>
+											${vo.price }<br>
+											${vo.loc }<br>
+											${vo.host }
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+						<%-- <table>
+						
+							<tr class="information">
+								<td colspan="2">
+									<table>
+										<tbody>
+											<tr>											
+												<td>
+													<i class="fa fa-star text-warning"></i>평점
+												</td>
+												<td>
+													${vo.rate}<br>
+													${vo.loc }
+												</td>
+											</tr>
+										</tbody>
+										
+									</table>
+								</td>
+							</tr>
+						</table> --%>							
+					
+					
+				</div>
+				
+				<div class="invoice-box">
+					<div class="comment">				
+						<h3>댓글</h3>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>		
+		</div>	
+		
+		<div class="col-lg-4">
+			<div class="box-contact">
+				<h3>신청</h3>
+			</div>
+		</div>	
+	</div>	
 </body>
 </html>

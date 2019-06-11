@@ -6,6 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.detail_link, .detail_link:hover{
+text-decoration:none;
+color:black;
+cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<!-- 리스트 -->
@@ -15,11 +22,13 @@
 			<c:forEach var="vo" items="${list }">
 				<div class="col-xs-4">
 					<div class="box-content bordered primary margin-bottom-20">
-						<div class="profile-avatar" style="height: 300px;">
-							<img src="${vo.thumbnail }" alt="">				
-							<h4><strong>${vo.title }</strong></h4>
-							<h6>${vo.subtitle }</h6>							
-						</div>							
+						<a class="detail_link" href="meet_detail.do?mno=${vo.mno }">
+							<div class="profile-avatar" style="height: 300px;">							
+								<img src="${vo.thumbnail }" alt="">				
+								<h4><strong>${vo.title }</strong></h4>
+								<h6>${vo.subtitle }</h6>							
+							</div>	
+						</a>						
 						<table class="table table-hover no-margin">
 							<tbody>								
 								<tr>

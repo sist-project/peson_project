@@ -30,4 +30,10 @@ public class MeetDAO {
 	{
 		return mapper.meetmapFind(map);
 	}
+	
+	//상세보기
+	public MeetVO meetDetailData(String mno)
+	{
+		return mapper.meetDetailData(mno);
+	}
 }
