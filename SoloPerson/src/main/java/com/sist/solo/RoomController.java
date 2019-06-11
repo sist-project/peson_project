@@ -26,6 +26,19 @@ public class RoomController {
 	@RequestMapping("room/topfive.do")
 	public String topFive(int cateno, Model model){
 		List<Room_furnitureVO> fList = dao.Room_furnitureData(cateno);
+		
+		String fee = "";
+		
+		for(Room_furnitureVO vo : fList){
+			fee = vo.getShippingfee();
+			
+			if(fee.indexOf("(") != -1){
+				vo.setShippingfee(fee.substring(0, fee.indexOf("(")));
+			}
+			
+			
+		}
+		
 		model.addAttribute("fList", fList);
 		return "room/ajax/topFive";
 	}

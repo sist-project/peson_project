@@ -51,6 +51,16 @@ div.td.option{
 	vertical-align: center;
 }
 
+.pricing-table .pname {
+	height: 120px;
+}
+
+.pname ul{
+	list-style: none;
+	vertical-align: center;
+	margin:0px; padding:0px;
+}
+
 .col-five:nth-child(2) > .thead{
  background-color: #CABB9C;
 }
@@ -76,7 +86,7 @@ div.td.option{
 	<div class="row small-spacing">
 		<c:forEach var="vo" items="${cateList}">
 			<div class="col-lg-2 col-md-6">
-				<div class="box-contact cate_container" cateno="${vo.cateno}">
+				<div class="box-contact cate_container" cateno="${vo.cateno}" style="cursor:pointer">
 					<img src="${vo.cateimg}" class="avatar cate_img">
 				</div>
 				<!-- /.box-contact -->

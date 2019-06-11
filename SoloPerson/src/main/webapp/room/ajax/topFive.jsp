@@ -14,19 +14,23 @@
 			<div class="thead" id="top5">
 				<div class="center-v">TOP 5</div>
 			</div>
-			<div class="td">상품명</div>
+			<div class="td pname">상품명</div>
 			<div class="td">가격</div>
 			<div class="td">배송비</div>
-			<div class="td">설명</div>
 			<div class="td option">옵션</div>
-			<div class="td"></div>
+			<div class="td">주문</div>
 		</div>
 		<c:forEach var="vo" items="${fList}">
 			<div class="col col-five">
 				<div class="thead">
 					<img src="${vo.productimg}">
 				</div>
-				<div class="td">${vo.productname }</div>
+				<div class="td pname">
+					<ul>
+						<li><b>${vo.productname}</b></li>
+						<li>${vo.content}</li>
+					</ul>
+				</div>
 				<div class="td">
 					<del>${vo.retailprice }</del>
 					 ${vo.saleprice }
@@ -34,7 +38,6 @@
 				<div class="td">
 					${vo.shippingfee }
 				</div>
-				<div class="td">${vo.content}</div>
 				<div class="td option">
 					<c:if test="${vo.option_select eq null && vo.option_color eq null }">
 						<i class="fa fa-times"></i>
@@ -56,7 +59,7 @@
 
 				</div>
 				<div class="td">
-					<a href="#" class="btn-order js__popup_open"
+					<a href="${vo.link}" target="_blank" class="btn-order js__popup_open"
 						data-target="#register-form-popup-2">ORDER NOW</a>
 				</div>
 			</div>
