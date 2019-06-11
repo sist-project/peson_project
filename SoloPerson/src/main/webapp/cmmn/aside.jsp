@@ -40,7 +40,7 @@
 					<a class="waves-effect" href="../meet/meet_main.do?pageName=meet"><i class="menu-icon mdi mdi-view-dashboard"></i><span>일상-모임</span></a>
 				</li>
 				<li class="menu1 current">
-					<a class="waves-effect" href="#"><i class="menu-icon mdi mdi-view-dashboard"></i><span>성정</span></a>
+					<a class="waves-effect" href="../visit_food/visitFood.do"><i class="menu-icon mdi mdi-view-dashboard"></i><span>혼자놀자</span></a>
 				</li>				
 			</ul>
 			<!-- /.menu js__accordion -->
