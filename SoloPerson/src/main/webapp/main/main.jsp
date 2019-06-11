@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+
 <script type="text/javascript">
 $(function() { 
 	// 시도별 비율 분포
@@ -50,51 +51,16 @@ $(function() {
 			
 		bar : {
 			graph : null,
-			data : [ {
-				x : "2010",
-				y : 10,
-				z : 17,
-				a : 9
-			}, {
-				x : "2011",
-				y : 5,
-				z : 14,
-				a : 13
-			}, {
-				x : "2012",
-				y : 5,
-				z : 13,
-				a : 12
-			}, {
-				x : "2013",
-				y : 6,
-				z : 12,
-				a : 5
-			}, {
-				x : "2014",
-				y : 17,
-				z : 8,
-				a : 8
-			}, {
-				x : "2015",
-				y : 10,
-				z : 14,
-				a : 18
-			}, {
-				x : "2016",
-				y : 8,
-				z : 17,
-				a : 14
-			} ],
+			data : <%=request.getAttribute("json") %>,
 			init : function() {
 				return Morris.Bar({
 					element : "bar-morris-chart",
 					behaveLikeLine : !0,
 					data : r.bar.data,
 					barColors : [ "#fcb03b", "#ea65a2", "#566FC9" ],
-					xkey : "x",
-					ykeys : [ "y", "z", "a" ],
-					labels : [ "Series A", "Series B", "Series C" ]
+					xkey : "age",
+					ykeys : [ "total", "female", "male" ],
+					labels : [ "총합", "여자", "남자" ]
 				}), !1
 			},
 			update : function() {
@@ -104,11 +70,48 @@ $(function() {
 	}
 }(jQuery);
 
+!function(e) {
+	"use strict";
+	var t = {};
+	e(document).ready(
+			function() {
+				return e("#bar-chartjs-chart").length && t.bar("bar-chartjs-chart", "top", "bar"),
+						e("#horizontal-bar-chartjs-chart").length && t.bar("horizontal-bar-chartjs-chart","right", "horizontalBar"),
+						e("#line-chartjs-chart").length && t.line("line-chartjs-chart", !1),
+						e("#area-chartjs-chart").length && t.line("area-chartjs-chart", !0),
+						e("#pie-chartjs-chart").length && t.pie("pie-chartjs-chart", "pie"),
+						e("#donut-chartjs-chart").length && t.pie("donut-chartjs-chart", "doughnut"),
+						e("#polar-chartjs-chart").length && t.polar("polar-chartjs-chart"),
+						e("#radar-chartjs-chart").length && t.radar("radar-chartjs-chart"), !1
+			}), t = {
+
+		pie : function(e, t) {
+			var i = document.getElementById(e).getContext("2d"), o = {
+				type : t,
+				data : {
+					datasets : [ {
+						data : [ "30", "20", "10"],
+						backgroundColor : [ "#f9c851", "#3ac9d6", "#ebeff2" ],
+						hoverBackgroundColor : [ "#f9c851", "#3ac9d6",
+								"#ebeff2" ],
+						hoverBorderColor : "#fff"
+					} ],
+					labels : [ "빨강", "초록", "노랑" ]
+				},
+				options : {
+					responsive : !0
+				}
+			};
+			return new Chart(i, o), !1
+		}
+	}
+}(jQuery);
 
 </script>
 <style type="text/css">
 #sidoPrint {
-	width: 400px;
+	width: 450px;
+	height: 500px;
 }
 #bar-morris-chart {
 	height: 335px;
@@ -118,30 +121,76 @@ $(function() {
 </head>
 <body>
 	<div class="row small-spacing">
-		<div class="col-xs-12">
+		<div class="col-lg-6 col-md-12">
+			<div class="box-content">
+				<div class="row">
+					<div class="col-lg-6">
+						<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포</span></i>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4" id="sidoPrint">
+						<img src="../assets/images/main/south_korea.jpg" width="300" usemap="#koreaMap">
+						<map name="koreaMap" id="koreaMap">
+							<area id="seoul" class="sidoArea" shape="rect" coords="79,85,97,105">
+							<area id="incheon" class="sidoArea" shape="rect" coords="60,95,77,115">
+							<area id="gyeonggi" class="sidoArea" shape="rect" coords="83,118,104,138">
+							<area id="gangwon" class="sidoArea" shape="rect" coords="186,51,206,74">
+							<area id="chungcheongbukdo" class="sidoArea" class="sidoArea" shape="rect" coords="143,138,160,160">
+							<area id="chungcheongnamdo" class="sidoArea" shape="rect" coords="52,168,71,190">
+							<area id="sejong" class="sidoArea" shape="rect" coords="109,184,126,203">
+							<area id="daejeon" class="sidoArea" shape="rect" coords="111,206,129,227">
+							<area id="gyeongsangbukdo" class="sidoArea" shape="rect" coords="212,179,230,200">
+							<area id="gyeongsangnamdo" class="sidoArea" shape="rect" coords="165,298,180,320">
+							<area id="daegu" class="sidoArea" shape="rect" coords="212,249,229,266">
+							<area id="ulsan" class="sidoArea" shape="rect" coords="253,275,270,297">
+							<area id="busan" class="sidoArea" shape="rect" coords="234,348,251,269">
+							<area id="jeollabukdo" class="sidoArea" shape="rect" coords="77,259,91,279">
+							<area id="jeollanamdo" class="sidoArea" shape="rect" coords="47,340,64,359">
+							<area id="gwangju" class="sidoArea" shape="rect" coords="67,314,82,332">
+							<area id="jeju" class="sidoArea" shape="rect" coords="48,434,65,456">
+						</map>									
+					</div>
+					<div class="col-lg-4 text-center">
+						<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년</h4>
+						<div class="knob-wrap">
+							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#ff8acc" data-readOnly=true data-thickness=".4" value="30"  />
+						</div>
+					</div>
+					<div class="col-lg-4 text-center">
+						<h4 class="box-title knob_year" style="margin-bottom: 15px; margin-top: 15px;">2017년</h4>
+						<div class="knob-wrap">
+							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#00aeff" data-readOnly=true data-thickness=".4" value="30"  />
+						</div>
+					</div>						
+				</div>
+			</div>
+		</div> 
+		<!-- /.col-lg-6 col-xs-12 -->	
+		<div class="col-lg-6 col-md-12">
 			<div class="box-content">
 				<i class="fa fa-credit-card" aria-hidden="true"><span class="box-title">&nbsp;&nbsp;1인 가구 소비 지출</span></i>
 				<!-- /.box-title -->
-				<div class="dropdown js__drop_down">
-					<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-					<ul class="sub-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else there</a></li>
-						<li class="split"></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-					<!-- /.sub-menu -->
-				</div>
-				<!-- /.dropdown js__dropdown -->
-				<div id="3dstacking-highcharts"></div>
+					<div class="dropdown js__drop_down">
+						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+						<ul class="sub-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else there</a></li>
+							<li class="split"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+						<!-- /.sub-menu -->
+					</div>
+					<!-- /.dropdown js__dropdown -->
+					<canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
 			</div>
 			<!-- /.box-content -->		
 		</div>
 
-		<div class="col-lg-6 col-xs-12">
+		<div class="col-lg-12">
 			<div class="box-content">
-					<i class="fa fa-bar-chart-o"><span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트</span></i>		
+					<i class="fa fa-bar-chart-o"><span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트(${sidoName })</span></i>		
 					<!-- /.box-title -->
 					<div class="dropdown js__drop_down">
 						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
@@ -158,11 +207,11 @@ $(function() {
 					<div id="bar-morris-chart" class="morris-chart"></div>
 					<div class="text-center">
 						<ul class="list-inline morris-chart-detail-list">
-							<li><button id="prevBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&lt;</button></li>
+<!-- <li><button id="prevBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&lt;</button></li>-->							
 							<li><i class="fa fa-circle"></i>Total</li>
 							<li><i class="fa fa-circle"></i>Female</li>
 							<li><i class="fa fa-circle"></i>Male</li>	
-							<li><button id="nextBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&gt;</button></li>													
+<!-- <li><button id="nextBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&gt;</button></li>	 -->	
 						</ul>
 					</div>
 					<!-- /#bar-morris-chart.morris-chart -->
@@ -171,54 +220,10 @@ $(function() {
 		</div>
 		<!-- /.col-lg-6 col-xs-12 -->
 		
-		<div class="col-lg-6 col-xs-12">
-			<div class="box-content">
-				<div class="row">
-					<div class="col-lg-6">
-						<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포</span></i>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4" id="sidoPrint">
-						<img src="../assets/images/main/south_korea.jpg" width="233" usemap="#koreaMap">
-						<map name="koreaMap" id="koreaMap">
-							<area id="seoul" class="sidoArea" shape="rect" coords="61,60,73,80">
-							<area id="incheon" class="sidoArea" shape="rect" coords="46,73,60,89">
-							<area id="gyeonggi" class="sidoArea" shape="rect" coords="65,92,77,107">
-							<area id="gangwon" class="sidoArea" shape="rect" coords="144,40,157,56">
-							<area id="chungcheongbukdo" class="sidoArea" class="sidoArea" shape="rect" coords="109,107,122,122">
-							<area id="chungcheongnamdo" class="sidoArea" shape="rect" coords="39,128,54,145">
-							<area id="sejong" class="sidoArea" shape="rect" coords="84,141,98,155">
-							<area id="daejeon" class="sidoArea" shape="rect" coords="85,159,99,173">
-							<area id="gyeongsangbukdo" class="sidoArea" shape="rect" coords="164,138,177,154">
-							<area id="gyeongsangnamdo" class="sidoArea" shape="rect" coords="126,230,138,246">
-							<area id="daegu" class="sidoArea" shape="rect" coords="163,189,177,205">
-							<area id="ulsan" class="sidoArea" shape="rect" coords="195,212,207,227">
-							<area id="busan" class="sidoArea" shape="rect" coords="180,244,194,260">
-							<area id="jeollabukdo" class="sidoArea" shape="rect" coords="57,199,71,215">
-							<area id="jeollanamdo" class="sidoArea" shape="rect" coords="36,260,50,277">
-							<area id="gwangju" class="sidoArea" shape="rect" coords="52,240,64,257">
-							<area id="jeju" class="sidoArea" shape="rect" coords="37,334,50,350">
-						</map>									
-					</div>
-					<div class="col-lg-4 text-center">
-						<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년</h4>
-						<div class="knob-wrap">
-							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#ff8acc" data-readOnly=true data-thickness=".4" value="30"  />
-						</div>
-					</div>
-					<div class="col-lg-4 text-center">
-						<h4 class="box-title knob_year" style="margin-bottom: 15px; margin-top: 15px;">2017년</h4>
-						<div class="knob-wrap">
-							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#00aeff" data-readOnly=true data-thickness=".4" value="30"  />
-						</div>
-					</div>						
-					<!-- .knob-wrap -->
-				</div>
-			</div>
-		</div>
-		<!-- /.col-lg-6 col-xs-12 -->
+
 	</div>
 	<!-- /.row -->
+
 </body>
+
 </html>
