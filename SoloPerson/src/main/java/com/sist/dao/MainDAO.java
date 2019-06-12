@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.sist.mapper.MainMapper;
 import com.sist.vo.GenderAgeVO;
+import com.sist.vo.PersonalConsumptionVO;
 
 @Repository
 public class MainDAO {
@@ -21,5 +22,8 @@ public class MainDAO {
 		return mapper.genderData(city);
 	}
 	
+	public List<PersonalConsumptionVO> consumptionData() {
+		return mapper.consumptionData();
+	}
 	
 }

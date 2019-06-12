@@ -6,9 +6,9 @@ public class GenderAgeVO {
 	private int no;
 	private String city;
 	private String age;
-	private String total;
-	private String male;
-	private String female;
+	private int total;
+	private int male;
+	private int female;
 	public int getNo() {
 		return no;
 	}
@@ -27,23 +27,23 @@ public class GenderAgeVO {
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
-	public String getMale() {
+	public int getMale() {
 		return male;
 	}
-	public void setMale(String male) {
+	public void setMale(int male) {
 		this.male = male;
 	}
-	public String getFemale() {
+	public int getFemale() {
 		return female;
 	}
-	public void setFemale(String female) {
+	public void setFemale(int female) {
 		this.female = female;
 	}
-	
+
 }

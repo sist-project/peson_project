@@ -51,7 +51,7 @@ $(function() {
 			
 		bar : {
 			graph : null,
-			data : <%=request.getAttribute("json") %>,
+			data : <%=request.getAttribute("json1")%>,
 			init : function() {
 				return Morris.Bar({
 					element : "bar-morris-chart",
@@ -89,14 +89,13 @@ $(function() {
 			var i = document.getElementById(e).getContext("2d"), o = {
 				type : t,
 				data : {
-					datasets : [ {
-						data : [ "30", "20", "10"],
-						backgroundColor : [ "#f9c851", "#3ac9d6", "#ebeff2" ],
-						hoverBackgroundColor : [ "#f9c851", "#3ac9d6",
-								"#ebeff2" ],
+					datasets : [{
+						data : <%=request.getAttribute("json2")%>,
+						backgroundColor : <%=request.getAttribute("colorJson")%>,
+						hoverBackgroundColor : <%=request.getAttribute("colorJson")%>,
 						hoverBorderColor : "#fff"
-					} ],
-					labels : [ "빨강", "초록", "노랑" ]
+					}],
+					labels : <%=request.getAttribute("arrLabel") %>
 				},
 				options : {
 					responsive : !0
@@ -169,7 +168,9 @@ $(function() {
 		<!-- /.col-lg-6 col-xs-12 -->	
 		<div class="col-lg-6 col-md-12">
 			<div class="box-content">
-				<i class="fa fa-credit-card" aria-hidden="true"><span class="box-title">&nbsp;&nbsp;1인 가구 소비 지출</span></i>
+				<i class="fa fa-credit-card" aria-hidden="true">
+				<span class="box-title">&nbsp;&nbsp;1인 가구 소비 지출</span>
+				<span class="box-title" style="position: relative; left: 500px;">단위(원)</span></i>
 				<!-- /.box-title -->
 					<div class="dropdown js__drop_down">
 						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
@@ -184,13 +185,16 @@ $(function() {
 					</div>
 					<!-- /.dropdown js__dropdown -->
 					<canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
-			</div>
+				</div>
 			<!-- /.box-content -->		
 		</div>
 
 		<div class="col-lg-12">
 			<div class="box-content">
-					<i class="fa fa-bar-chart-o"><span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트(${sidoName })</span></i>		
+					<i class="fa fa-bar-chart-o">
+						<span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트(${sidoName })</span>
+					</i>
+					<span class="box-title" style="position: relative; left: 1200px;">단위(명)</span></i>	
 					<!-- /.box-title -->
 					<div class="dropdown js__drop_down">
 						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
