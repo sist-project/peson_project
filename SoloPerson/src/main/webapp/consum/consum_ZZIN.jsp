@@ -76,6 +76,7 @@
 
 </script>
 
+
 </head>
 <body>
 	<!-- Pie Chart -->
@@ -154,106 +155,45 @@
 
 
 
-
-
-	<!-- widget -->
-	<div class="col-md-6">
-	<div class="row small-spacing">
-		<div class="col-lg-6">
-			<div class="box-content bg-success text-white">
-				<div class="statistics-box with-icon">
-					<i class="ico small fa fa-diamond"></i>
-					<p class="text text-white">SUCCESS</p>
-					<h2 class="counter">72943</h2>
-				</div>
+	<!-- profile activity 이걸 안하면 이걸한다 -->
+	<div class="col-md-4 col-xs-12">
+		<div class="box-content card">
+			<h4 class="box-title">
+				<i class="fa fa-globe ico"></i> Activity
+			</h4>
+			<!-- /.box-title -->
+			<div class="dropdown js__drop_down">
+				<a href="#"
+					class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+				<ul class="sub-menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else there</a></li>
+					<li class="split"></li>
+					<li><a href="#">Separated link</a></li>
+				</ul>
+				<!-- /.sub-menu -->
 			</div>
-			<!-- /.box-content -->
-		</div>
-		<!-- /.col-lg-3 col-md-6 col-xs-12 -->
-		<div class="col-lg-6">
-			<div class="box-content bg-info text-white">
-				<div class="statistics-box with-icon">
-					<i class="ico small fa fa-download"></i>
-					<p class="text text-white">DOWNLOAD</p>
-					<h2 class="counter">6382</h2>
-				</div>
+			<!-- /.dropdown js__dropdown -->
+			<div class="card-content">
+				<ul class="notice-list">
+					<li><a href="#"> <span class="avatar"><img
+								src="assets/images/avatar-1.jpg" alt=""></span> <span
+							class="name">Betty Simmons</span> <span class="desc">There
+								are new settings available</span> <span class="time">2 hours ago</span>
+					</a></li>
+				</ul>
+				<!-- <!-- /.notice-list -->
+				<div class="text-center margin-top-20">
+					<a href="#" class="btn btn-default">See All Activities <i
+						class="fa fa-angle-double-right"></i></a>
+				</div> -->
 			</div>
-			<!-- /.box-content -->
+			<!-- /.card-content -->
 		</div>
-		<!-- /.col-lg-3 col-md-6 col-xs-12 -->
-		<div class="col-lg-6">
-			<div class="box-content bg-danger text-white">
-				<div class="statistics-box with-icon">
-					<i class="ico small fa fa-bug"></i>
-					<p class="text text-white">FIXED BUG</p>
-					<h2 class="counter">12564</h2>
-				</div>
-			</div>
-			<!-- /.box-content -->
-		</div>
-		<!-- /.col-lg-3 col-md-6 col-xs-12 -->
-		<div class="col-lg-6">
-			<div class="box-content bg-warning text-white">
-				<div class="statistics-box with-icon">
-					<i class="ico small fa fa-usd"></i>
-					<p class="text text-white">SALES</p>
-					<h2 class="counter">2,637</h2>
-				</div>
-			</div>
-			<!-- /.box-content -->
-		</div>
-		<!-- /.col-lg-3 col-md-6 col-xs-12 -->
+		<!-- /.box-content card -->
 	</div>
-	</div>
-
-
-		<!-- profile activity 이걸 안하면 이걸한다 -->
-		<div class="col-md-6">
-			<div class="box-content card">
-				<h4 class="box-title">
-					<i class="fa fa-globe ico"></i> Activity
-				</h4>
-				<!-- /.box-title -->
-				<div class="dropdown js__drop_down">
-					<a href="#"
-						class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-					<ul class="sub-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else there</a></li>
-						<li class="split"></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-					<!-- /.sub-menu -->
-				</div>
-				<!-- /.dropdown js__dropdown -->
-				<div class="card-content">
-					<ul class="notice-list">
-						<li><a href="#"> <span class="avatar"><img
-									src="assets/images/avatar-1.jpg" alt=""></span> <span
-								class="name">Betty Simmons</span> <span class="desc">There
-									are new settings available</span> <span class="time">2 hours
-									ago</span>
-						</a></li>
-					</ul>
-					<!-- <!-- /.notice-list -->
-					<div class="text-center margin-top-20">
-						<a href="#" class="btn btn-default">See All Activities <i
-							class="fa fa-angle-double-right"></i></a>
-					</div>
-					-->
-				</div>
-				<!-- /.card-content -->
-			</div>
-			<!-- /.box-content card -->
-		</div>
-		<!-- /.col-md-6 -->
-
-
-		<!-- widget2 -->
-		
-
-
+	<!-- /.col-md-6 -->
 
 
 
