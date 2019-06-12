@@ -15,6 +15,27 @@
 	{"title":"jeollabukdo", "url":"../assets/images/main/jeollabukdo.png"},
 	{"title":"jeollanamdo", "url":"../assets/images/main/jeollanamdo.png"},
 	{"title":"gwangju", "url":"../assets/images/main/gwangju.png"},
-	{"title":"jeju", "url":"../assets/images/main/jeju.png"}
+	{"title":"jeju", "url":"../assets/images/main/jeju.png"},
+	{"title":"south_korea", "url":"../assets/images/main/south_korea.jpg"}
+],
+ "koreaCoords" :[
+ 	{"id":"seoul", "coords":"79,85,97,105"},
+	{"id":"incheon", "coords":"60,95,77,115"},
+	{"id":"gyeonggi", "coords":"83,118,104,138"},
+	{"id":"gangwon", "coords":"186,51,206,74"},
+	{"id":"chungcheongbukdo", "coords":"143,138,160,160"},
+	{"id":"chungcheongnamdo", "coords":"52,168,71,190"},
+	{"id":"sejong", "coords":"109,184,126,203"},
+	{"id":"daejeon", "coords":"111,206,129,227"},
+	{"id":"gyeongsangbukdo", "coords":"212,179,230,200"},
+	{"id":"gyeongsangnamdo", "coords":"165,298,180,320"},
+	{"id":"daegu", "coords":"212,249,229,266"},
+	{"id":"ulsan", "coords":"253,275,270,297"},
+	{"id":"busan", "coords":"234,348,251,269"},
+	{"id":"jeollabukdo", "coords":"77,259,91,279"},
+	{"id":"jeollanamdo", "coords":"47,340,64,359"},
+	{"id":"gwangju", "coords":"67,314,82,332"},
+	{"id":"jeju", "coords":"48,434,65,456"}
+	]
+}
 	
-]}

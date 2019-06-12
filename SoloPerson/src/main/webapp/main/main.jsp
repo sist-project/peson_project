@@ -18,13 +18,26 @@ $(function() {
 			type : "post",
 			dataType : "json",
 			success : function(res) {
-				for (var i = 0; i < 17; i++) {
+				for (var i = 0; i < 18; i++) {
 					if (res.images[i].title === $this) {
 						var $url = res.images[i].url;		
 						$("#sidoPrint").html("<div class='row'>"
 											+  "<button class='backBtn btn btn-rounded btn-bordered btn-xs waves-effect waves-light' style='position: relative; left: 300px;'>Back</button>"
 											+"</div>"
-										    +  "<img src=" + $url + " usemap=#seoulMap>");						
+										    +  "<img src=" + $url + " usemap=#seoulMap>");
+						$(".backBtn").click(function() {
+							$url = res.images[17].url;
+							$id = res.koreaCoords[0].id;
+							$coords = res.koreaCoords[0].coords;
+							con
+							
+							$("#sidoPrint").html("<img src=" + $url + " width='300' usemap=#seoulMap>"
+									 		   + "<map name='koreaMap' id='koreaMap'>"
+									 		   + "<area id=" + $id +" class='sidoArea' shape='rect' coords=" + $coords + ">"
+									 		   + "</map>");
+						});
+							
+						
 					}				
 				}		
 			}
@@ -32,7 +45,8 @@ $(function() {
 		});
 		
 	});
-		
+	
+	
 });
 
 //성별 비율 분포
