@@ -11,9 +11,9 @@
 		<a href="../main/main.do" class="logo"><i class="ico mdi mdi-cube-outline"></i>One Person</a>
 		<button type="button" class="button-close fa fa-times js__menu_close"></button>
 		<div class="user">
-			<a href="#" class="avatar"><img src="../assets/images/avatar-sm-5.jpg" alt=""><span class="status online"></span></a>
-			<h5 class="name"><a href="profile.html">Denise Emily</a></h5>
-			<h5 class="position">Administrator</h5>
+			<a href="#" class="avatar"><img src="../cmmn/solo_logo.PNG" alt=""><span class="status online"></span></a>
+			<h5 class="name"><a href="profile.html">빛이 나는</a></h5>
+			<h5 class="position">SOLO</h5>
 			<!-- /.name -->
 			<div class="control-wrap js__drop_down">
 				<i class="fa fa-caret-down js__drop_down_button"></i>
