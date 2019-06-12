@@ -7,18 +7,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.vo.*;
 import com.sist.dao.*;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.util.*;
+
 @Controller
 public class MartController {
+	@Autowired
+	private MartDAO dao;
 
-
-	
 	@RequestMapping("mart/mart.do")
-	public String martController(Model model) {
+	public String martController(String no, Model model) {
+
+		List<MartVO> list = new ArrayList<MartVO>();
 		
+		if (no == null) {
+			no="1";
+			list = dao.martAllData1(Integer.parseInt(no));
+			
+		} else {
+			list = dao.martAllData1(Integer.parseInt(no));
 		
-		
+		}
+		model.addAttribute("list", list);
+
 		return "mart/mart";
 	}
-	
+
+	@RequestMapping("mart/mart_detail.do")
+	public String mart_detail(String cno, Model model) {
+		MartVO vo = dao.martDetailData(cno);
+		model.addAttribute("vo", vo);
+		return "mart/mart_detail";
+	}
+
 }
