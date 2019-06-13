@@ -5,54 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!-- Round Range Slider -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- google chart -->
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 
-<!-- knob chart -->
-<!-- Main Styles -->
-<link rel="stylesheet" href="assets/styles/style.min.css">
-<!-- Material Design Icon -->
-<link rel="stylesheet"
-	href="assets/fonts/material-design/css/materialdesignicons.css">
-<!-- mCustomScrollbar -->
-<link rel="stylesheet"
-	href="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-<!-- Waves Effect -->
-<link rel="stylesheet" href="assets/plugin/waves/waves.min.css">
-<!-- Sweet Alert -->
-<link rel="stylesheet" href="assets/plugin/sweet-alert/sweetalert.css">
-
-<!-- profile active -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>Profile - My Admin Template</title>
-
-<!-- Main Styles -->
-<link rel="stylesheet" href="assets/styles/style.min.css">
-
-<!-- Material Design Icon -->
-<link rel="stylesheet"
-	href="assets/fonts/material-design/css/materialdesignicons.css">
-
-<!-- mCustomScrollbar -->
-<link rel="stylesheet"
-	href="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-
-<!-- Waves Effect -->
-<link rel="stylesheet" href="assets/plugin/waves/waves.min.css">
-
-<!-- Sweet Alert -->
-<link rel="stylesheet" href="assets/plugin/sweet-alert/sweetalert.css">
-
 <script type="text/javascript">
-
+	
 	<!-- google chart -->
 	google.charts.load('current', {
 		'packages' : [ 'corechart' ]
@@ -60,22 +20,84 @@
 	google.charts.setOnLoadCallback(drawChart);
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
-				[ 'Task', 'Hours per Day' ], [ '식료품', 32 ], [ '기타지출', 23 ],
-				[ '주거비', 20 ], [ '교통비', 9 ], [ '의료비', 8 ], [ '통신비', 6 ],
-				[ '교육비', 1 ] ]);
+				[ 'Task', 'Hours per Day' ], 
+				[ '식료품', ${vo.grocery} ], 
+				[ '주거비', ${vo.residence} ],
+				[ '교육비', ${vo.education} ], 
+				[ '의료비', ${vo.medication} ], 
+				[ '교통비', ${vo.transportation} ], 
+				[ '통신비', ${vo.phone} ],
+				[ '기타지출', ${vo.etc} ],
+				[ '비소비지출', ${vo.nonliving} ] 
+				]);
 		var options = {
 			title : ''
 		};
-		var chart = new google.visualization.PieChart(document
-				.getElementById('piechart'));
+		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 		chart.draw(data, options);
 	}
 	
 	
+	<!-- Round Range Slider -->
+	  var slider=null;
+	  var output=null;
+	  window.onload=function()
+	  {
+		  slider = document.getElementById("salary");
+		  output = document.getElementById("demo");
+		  output.innerHTML=slider.value;
+		  
+		  slider1 = document.getElementById("saving");
+		  output1 = document.getElementById("demo1");
+		  output1.innerHTML=slider1.value;
+	  }
+		
+	function setValue()
+	{
+		output.innerHTML=slider.value;
+		output1.innerHTML=slider1.value;
+	}
 	
-
 </script>
+<style type="text/css">
+.slidecontainer {
+	width: 100%;
+}
 
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4CAF50;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4CAF50;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<!-- Pie Chart -->
@@ -112,22 +134,32 @@
 					<li class="split"></li>
 					<li><a href="#">Separated link</a></li>
 				</ul>
-				<!-- /.sub-menu -->
 			</div>
-			<!-- /.dropdown js__dropdown -->
 			<p>한 달 수입을 입력해주세요</p>
-			<div id="ion-range-03"></div>
+			<div class="slidecontainer">
+				<input type="range" min="1" max="1000" value="50" class="slider" id="salary" onchange="setValue()">
+				<p>
+					Value: <span id="demo"></span>
+				</p>
+			</div>
 
 			<p>저축 목표(%)</p>
-			<div id="ion-range-01"></div>
+			<div class="slidecontainer">
+				<input type="range" min="1" max="100" value="50" class="slider" id="saving" onchange="setValue()">
+				<p>
+					Value: <span id="demo1"></span>
+				</p>
+			</div>
 
 			<p>나의 한달 생활비</p>
-			<div id="ion-range-02"></div>
-
+			<div class="slidecontainer">
+				<input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="setValue()">
+				<p>
+					Value: <span id="demo"></span>
+				</p>
+			</div>
 		</div>
-		<!-- /.box-content -->
 	</div>
-	<!-- /.col-xs-12 -->
 
 
 	<!-- angle offset -->
@@ -135,21 +167,15 @@
 		<div class="col-lg-3 col-xs-12">
 			<div class="box-content">
 				<h4 class="box-title">Angle offset</h4>
-				<!-- /.box-title -->
-
-				<!-- /.dropdown js__dropdown -->
 				<div class="text-center">
 					<div class="knob-wrap">
 						<input class="knob" data-width="150" data-height="150"
 							data-bgColor="#ebeff2" data-fgColor="#f60e0e" data-angleOffset=90
 							data-linecap=round value="75" />
 					</div>
-					<!-- .knob-wrap -->
 				</div>
 			</div>
-			<!-- /.box-content -->
 		</div>
-		<!-- /.col-lg-3 col-xs-12 -->
 	</c:forEach>
 
 
