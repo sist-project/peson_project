@@ -11,7 +11,7 @@ public class ConsumDAO {
 	@Autowired
 	private ConsumMapper mapper;
 	
-	public ConsumVO consumAllData()
+	public List<ConsumVO> consumAllData()
 	{
 		return mapper.consumAllData();
 	}

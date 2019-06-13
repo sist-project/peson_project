@@ -1,5 +1,7 @@
 package com.sist.solo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +18,8 @@ public class ConsumController {
 	@RequestMapping("consum/consum.do")
 	public String mainController(Model model) 
 	{
-		ConsumVO vo=dao.consumAllData();
-		model.addAttribute("vo", vo);
+		List<ConsumVO> list=dao.consumAllData();
+		model.addAttribute("list", list);
 		return "consum/consum";
 	}
 	

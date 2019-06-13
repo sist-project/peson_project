@@ -8,5 +8,5 @@ import com.sist.vo.*;
 
 public interface ConsumMapper {
 	@Select("SELECT * FROM consum")
-	public ConsumVO consumAllData();
+	public List<ConsumVO> consumAllData();
 }

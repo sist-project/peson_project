@@ -1,60 +1,26 @@
 package com.sist.vo;
 
 public class ConsumVO {
-	private int grocery;
-	private int residence;
-	private int education;
-	private int medication;
-	private int transportation;
-	private int phone;
-	private int etc;
-	private int nonliving;
-	public int getGrocery() {
-		return grocery;
+	private String category;
+	private int value;
+	private int no;
+	public int getNo() {
+		return no;
 	}
-	public void setGrocery(int grocery) {
-		this.grocery = grocery;
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public int getResidence() {
-		return residence;
+	public String getCategory() {
+		return category;
 	}
-	public void setResidence(int residence) {
-		this.residence = residence;
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	public int getEducation() {
-		return education;
+	public int getValue() {
+		return value;
 	}
-	public void setEducation(int education) {
-		this.education = education;
+	public void setValue(int value) {
+		this.value = value;
 	}
-	public int getMedication() {
-		return medication;
-	}
-	public void setMedication(int medication) {
-		this.medication = medication;
-	}
-	public int getTransportation() {
-		return transportation;
-	}
-	public void setTransportation(int transportation) {
-		this.transportation = transportation;
-	}
-	public int getPhone() {
-		return phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
-	public int getEtc() {
-		return etc;
-	}
-	public void setEtc(int etc) {
-		this.etc = etc;
-	}
-	public int getNonliving() {
-		return nonliving;
-	}
-	public void setNonliving(int nonliving) {
-		this.nonliving = nonliving;
-	}
+	
 }
