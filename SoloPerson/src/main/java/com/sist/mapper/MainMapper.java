@@ -9,9 +9,6 @@ import com.sist.vo.PersonalConsumptionVO;
 
 public interface MainMapper {
 	
-	@Select("SELECT DISTINCT city FROM genderAgeTotal")
-	public List<String> cityList();
-	
 	@Select("SELECT * FROM genderAgeTotal WHERE city=#{city} AND age != 'гу╟Х' ORDER BY no")
 	public List<GenderAgeVO> genderData(String city);
 	

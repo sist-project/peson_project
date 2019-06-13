@@ -14,10 +14,6 @@ public class MainDAO {
 	@Autowired
 	private MainMapper mapper;
 	
-	public List<String> cityList() {
-		return mapper.cityList();
-	}
-	
 	public List<GenderAgeVO> genderData(String city) {
 		return mapper.genderData(city);
 	}

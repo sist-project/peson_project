@@ -27,7 +27,6 @@ public class MainController {
 		String[] city = {"서울특별시", "부산광역시" ,"대구광역시", "인천광역시" ,"광주광역시", 
 					     "대전광역시", "울산광역시", "경기도" ,"충청북도", "충청남도", "전라북도", 
 					     "전라남도", "경상남도", "경상북도", "제주특별자치도"};
-		List<String> cityList = dao.cityList();
 		List<GenderAgeVO> gList = dao.genderData(city[0]);
 		
 		JSONArray arr1=new JSONArray();
@@ -89,6 +88,35 @@ public class MainController {
 		model.addAttribute("arrLabel", arrLabel);
 		
 		return "main/main";
+	}
+	
+	@RequestMapping("main/genderAjax.do")
+	public String ajaxController(Model model) {
+		
+		// 시도별 분포
+		int num = (int)(Math.random()*15);
+		
+		String[] city = {"서울특별시", "부산광역시" ,"대구광역시", "인천광역시" ,"광주광역시", 
+					     "대전광역시", "울산광역시", "경기도" ,"충청북도", "충청남도", "전라북도", 
+					     "전라남도", "경상남도", "경상북도", "제주특별자치도"};
+		List<GenderAgeVO> gList = dao.genderData(city[num]);
+		
+		JSONArray arr1=new JSONArray();
+		for (int i = 0; i < 15; i++) {
+			JSONObject obj = new JSONObject();
+			GenderAgeVO vo = gList.get(i);
+			obj.put("age", vo.getAge());
+			obj.put("total", vo.getTotal());
+			obj.put("female",vo.getFemale());
+			obj.put("male", vo.getMale());
+			
+			arr1.add(obj);
+		}
+
+		model.addAttribute("sidoName", city[num]);
+		model.addAttribute("json1", arr1.toJSONString());
+			
+		return "main/ajax/genderAjax";
 	}
 	
 }

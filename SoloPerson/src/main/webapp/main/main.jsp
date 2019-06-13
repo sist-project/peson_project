@@ -46,6 +46,18 @@ $(function() {
 		
 	});
 	
+
+	$("#prevBtn").click(function() {
+		$.ajax({
+			url : "genderAjax.do",
+			type : "post",
+			success : function(res) {
+				$("#genderPrint").html(res);
+			}
+			
+		});
+	});
+	
 	
 });
 
@@ -206,30 +218,22 @@ $(function() {
 		<div class="col-lg-12">
 			<div class="box-content">
 					<i class="fa fa-bar-chart-o">
-						<span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트(${sidoName })</span>
+						<span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트</span>
 					</i>
-					<span class="box-title" style="position: relative; left: 1200px;">단위(명)</span></i>	
-					<!-- /.box-title -->
-					<div class="dropdown js__drop_down">
-						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-						<ul class="sub-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else there</a></li>
-							<li class="split"></li>
-							<li><a href="#">Separated link</a></li>
-						</ul>
-						<!-- /.sub-menu -->
-					</div>
+						<span class="box-title" style="position: relative; left: 1270px;">단위(명)
+							<button id="prevBtn" class="btn btn-circle btn-xs waves-effect waves-light fa fa-refresh"></button>	
+						</span>
+					<!-- /.box-title -->		
 					<!-- /.dropdown js__dropdown -->
-					<div id="bar-morris-chart" class="morris-chart"></div>
+					<div id="genderPrint" class="row">
+						<div id="bar-morris-chart" class="morris-chart"></div>
+						<span class="box-title" style="position: relative; left: 750px;">&nbsp;&nbsp;${sidoName }</span>
+					</div>
 					<div class="text-center">
 						<ul class="list-inline morris-chart-detail-list">
-<!-- <li><button id="prevBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&lt;</button></li>-->							
 							<li><i class="fa fa-circle"></i>Total</li>
 							<li><i class="fa fa-circle"></i>Female</li>
 							<li><i class="fa fa-circle"></i>Male</li>	
-<!-- <li><button id="nextBtn" class="btn btn-primary btn-circle btn-xs waves-effect waves-light">&gt;</button></li>	 -->	
 						</ul>
 					</div>
 					<!-- /#bar-morris-chart.morris-chart -->
@@ -237,8 +241,6 @@ $(function() {
 				<!-- /.box-content -->
 		</div>
 		<!-- /.col-lg-6 col-xs-12 -->
-		
-
 	</div>
 	<!-- /.row -->
 
