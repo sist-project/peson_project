@@ -62,23 +62,23 @@ div.td.option{
 }
 
 .col-five:nth-child(2) > .thead{
- background-color: #CABB9C;
+ background-color: #0652DD;
 }
 
 .col-five:nth-child(3) > .thead{
- background-color: #0BA29A;
+ background-color: #2980b9;
 }
 
 .col-five:nth-child(4) > .thead{
- background-color: #0B41AC;
+ background-color: #2980b9;
 }
 
 .col-five:nth-child(5) > .thead{
- background-color: #F2E55B;
+ background-color: #2980b9;
 }
 
 .col-five:nth-child(6) > .thead{
- background-color: #F6A0A0;
+ background-color: #2980b9;
 }
 </style>
 </head>
@@ -93,11 +93,11 @@ div.td.option{
 			</div>
 		</c:forEach>
 	</div>
-
+	
 	<div class="pricing-plan">
-		
+			
 	</div>
-	<!-- /.pricing-plan -->
+
 
 </body>
 </html>

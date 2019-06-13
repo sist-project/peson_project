@@ -27,13 +27,13 @@
 				</div>
 				<div class="td pname">
 					<ul>
-						<li><b>${vo.productname}</b></li>
+						<li class="text-purple"><b>${vo.productname}</b></li>
 						<li>${vo.content}</li>
 					</ul>
 				</div>
 				<div class="td">
 					<del>${vo.retailprice }</del>
-					 ${vo.saleprice }
+					 <span class="text-danger">${vo.saleprice }</span>
 				</div>
 				<div class="td">
 					${vo.shippingfee }
