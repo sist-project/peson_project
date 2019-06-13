@@ -1,19 +1,16 @@
 package com.sist.solo;
 
-import java.io.FileReader;
-import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.sist.dao.MainDAO;
 import com.sist.vo.GenderAgeVO;
-import com.sist.vo.PersonalConsumptionVO;
 import com.sist.vo.PersonalConsumptionVO1;
 
 @Controller
@@ -48,7 +45,9 @@ public class MainController {
 		// 개인 소비지출
 		String[] color = { "#54a0ff", "#feca57", "#ff6b6b", "#48dbfb", "#1dd1a1", "#00d2d3", "#ff9ff3", "#5f27cd",
 				"#c8d6e5", "#341f97" };
-		List<PersonalConsumptionVO1> list = dao.consumptionData1();
+		List<String> nameList = dao.consumptionName();	// 지출 목록 이름
+		
+		List<PersonalConsumptionVO1> list = dao.consumptionData1(nameList.get(1));
 		JSONArray arr2 = new JSONArray();
 		int j = 0;
 		for (PersonalConsumptionVO1 vo : list) {
@@ -80,7 +79,7 @@ public class MainController {
 		model.addAttribute("json2", arr2);
 		model.addAttribute("colorJson", colorJson);
 		model.addAttribute("arrLabel", arrLabel);
-		
+		model.addAttribute("consumptionName", nameList.get(1));
 		return "main/main";
 	}
 	
@@ -115,7 +114,45 @@ public class MainController {
 	
 	@RequestMapping("main/consumptionAjax.do")
 	public String ajaxController2(Model model) {
+		List<String> nameList = dao.consumptionName();	// 지출 목록 이름
+		int num = (int)(Math.random()*10);
 		
+		String[] color = { "#54a0ff", "#feca57", "#ff6b6b", "#48dbfb", "#1dd1a1", "#00d2d3", "#ff9ff3", "#5f27cd",
+				"#c8d6e5", "#341f97" };
+		
+		List<PersonalConsumptionVO1> list = dao.consumptionData1(nameList.get(num));
+		JSONArray arr2 = new JSONArray();
+		int j = 0;
+		for (PersonalConsumptionVO1 vo : list) {
+			arr2.add(vo.getYear2018());
+			j++;
+
+			if (j > 9)
+				break;
+
+		}
+		
+		JSONArray colorJson = new JSONArray();
+		for (int i = 0; i < arr2.size(); i++) {
+			colorJson.add(color[i]);
+		}
+		
+		JSONArray arrLabel = new JSONArray();
+		j = 0;
+		
+		for (PersonalConsumptionVO1 vo : list) {
+			arrLabel.add(vo.getCol2());
+			j++;
+
+			if (j > 9)
+				break;
+
+		}
+
+		model.addAttribute("json2", arr2);
+		model.addAttribute("colorJson", colorJson);
+		model.addAttribute("arrLabel", arrLabel);
+		model.addAttribute("consumptionName", nameList.get(num));
 		
 		return "main/ajax/consumptionAjax";
 	}

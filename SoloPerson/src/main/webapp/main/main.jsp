@@ -58,8 +58,10 @@ $(function() {
 		});
 	});
 	
+
 	// 소비 지출 버튼
 	$("#nextBtn").click(function() {
+		
 		$.ajax({
 			url : "consumptionAjax.do",
 			type : "post",
@@ -69,7 +71,6 @@ $(function() {
 			
 		});
 	});
-	
 	
 });
 
@@ -215,6 +216,7 @@ $(function() {
 				<!-- /.box-title -->
 					<!-- /.dropdown js__dropdown -->
 				<div id="consumptionPrint" class="row">
+					<span class="box-title" style="position: relative; left: 60px;">(${consumptionName })</span>
 					<canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
 				</div>
 				</div>

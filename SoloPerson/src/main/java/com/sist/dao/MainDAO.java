@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.sist.mapper.MainMapper;
 import com.sist.vo.GenderAgeVO;
-import com.sist.vo.PersonalConsumptionVO;
 import com.sist.vo.PersonalConsumptionVO1;
 
 @Repository
@@ -20,12 +19,12 @@ public class MainDAO {
 		return mapper.genderData(city);
 	}
 	
-	public List<PersonalConsumptionVO> consumptionData() {
-		return mapper.consumptionData();
+	public List<String> consumptionName() {
+		return mapper.consumptionName();
 	}
 	
-	public List<PersonalConsumptionVO1> consumptionData1() {
-		return mapper.consumptionData1();
+	public List<PersonalConsumptionVO1> consumptionData1(String name) {
+		return mapper.consumptionData1(name);
 	}
 	
 }

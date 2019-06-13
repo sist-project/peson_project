@@ -43,7 +43,7 @@
 </script>
 </head>
 <body>
+	<span class="box-title" style="position: relative; left: 60px;">(${consumptionName })</span>
 	<canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
-	fff
 </body>
 </html>
