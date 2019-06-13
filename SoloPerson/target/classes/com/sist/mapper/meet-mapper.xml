@@ -14,4 +14,14 @@
 	<select id="replyAllData" statementType="CALLABLE" parameterMap="replyList">
 		{CALL replyAllData(?,?)}
 	</select>
+	
+	
+	<parameterMap type="hashmap" id="replyIn">
+		<parameter property="prno" mode="IN" javaType="java.lang.Integer"/>
+		<parameter property="pname" mode="IN" javaType="java.lang.String"/>
+		<parameter property="pmsg" mode="IN" javaType="java.lang.String"/>
+	</parameterMap>
+	<select id="replyInsertData" statementType="CALLABLE" parameterMap="replyIn">
+		{CALL replyInsertData(?,?,?)}
+	</select>
 </mapper>

@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
 
+
 <style type="text/css">
 .subtitle{
 	font-size: 20px;
@@ -33,6 +34,9 @@
 	font-size: 18px;
 }
 
+#h{
+	width: 100px;
+}
 </style>
 </head>
 <body>
@@ -98,17 +102,41 @@
 				
 				<div class="invoice-box">						
 					<h4 class="box-title text-info text-left">후기</h4>	
-					<div class="text-right">
-						<button type="button" class="btn btn-default waves-effect waves-light" data-toggle="modal" data-target="#addTask">+ Add New</button>
+					
+					<div class="box-content card white">
+						<h4 class="box-title">후기 작성</h4>
+						<!-- /.box-title -->
+						<div class="card-content">
+							<form class="form-horizontal" method="post" action="replyInsert.do">
+								<div class="form-group">
+									<label for="inp-type-1" class="col-sm-3 control-label" id="h">이름</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" name="name">
+										<input type=hidden name=rno value="${vo.mno }">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inp-type-5" class="col-sm-3 control-label" id="h">내용</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" name="msg"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type=submit value="OK" class="btn btn-sm btn-primary">
+				                </div>
+							</form>							
+						</div>
+						<!-- /.card-content -->
 					</div>
+					<hr>
+					<!-- /.box-content card white -->
 					
 					<c:forEach var="rvo" items="${rList }">
-						<div class="box-content">											
-							<div class="task-lists">				
-								<div class="title">${rvo.no }</div>				
-								<div class="title">${rvo.name }</div>
-								<div class="title">${rvo.db_day }</div>
-								<div class="title">${rvo.msg }</div>								
+						<div class="box-content text-left">											
+							<div class="task-lists">
+								<div class="title"><span style="color: blue;">${rvo.name }</span> [${rvo.db_day }]</div>	
+								<br>							
+								<div class="content"><pre>${rvo.msg }</pre></div>								
 							</div>						
 						</div>
 					</c:forEach>
@@ -121,8 +149,12 @@
 		<div class="col-lg-4">
 			<div class="box-contact">
 				<h3>신청</h3>
+				
 			</div>
 		</div>	
 	</div>	
+	
 </body>
+
+
 </html>

@@ -59,24 +59,16 @@ public class MeetDAO extends SqlSessionDaoSupport{
 		return rList;
 	}
 	
-	
-	/*
-	 * //목록
-	public List<BoardVO> boardAllData(int page)
-	{
-		List<BoardVO> list=new ArrayList<BoardVO>();
-		int rowSize=10;
-		int start=(page*rowSize)-(rowSize-1);
-		int end=page*rowSize;
+	//댓글 추가
+	public void replyInsertData(Meet_ReplyVO vo)
+	{		
 		Map map=new HashMap();
-		map.put("pStart", start);
-		map.put("pEnd", end);
+		map.put("prno", vo.getRno());
+		map.put("pname", vo.getName());
+		map.put("pmsg", vo.getMsg());
 		
-		getSqlSession().update("boardAllData",map);
+		getSqlSession().update("replyInsertData",map);
 		
-		list=(List<BoardVO>)map.get("pResult");
-		
-		return list;
 	}
-	 */
+	
 }

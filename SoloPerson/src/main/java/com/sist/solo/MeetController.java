@@ -80,4 +80,11 @@ public class MeetController {
 		
 		return "meet/meet_detail";
 	}
+	
+	@RequestMapping("meet/replyInsert.do")
+	public String meet_replyInsert(Meet_ReplyVO vo)
+	{
+		dao.replyInsertData(vo);
+		return "redirect:meet_detail.do?pageName=meet&mno="+vo.getRno();
+	}
 }
