@@ -46,13 +46,25 @@ $(function() {
 		
 	});
 	
-
-	$("#prevBtn").click(function() {
+	// 성별 차트 버튼
+	$("#refreshBtn").click(function() {
 		$.ajax({
 			url : "genderAjax.do",
 			type : "post",
 			success : function(res) {
 				$("#genderPrint").html(res);
+			}
+			
+		});
+	});
+	
+	// 소비 지출 버튼
+	$("#nextBtn").click(function() {
+		$.ajax({
+			url : "consumptionAjax.do",
+			type : "post",
+			success : function(res) {
+				$("#consumptionPrint").html(res);
 			}
 			
 		});
@@ -196,21 +208,15 @@ $(function() {
 			<div class="box-content">
 				<i class="fa fa-credit-card" aria-hidden="true">
 				<span class="box-title">&nbsp;&nbsp;1인 가구 소비 지출</span>
-				<span class="box-title" style="position: relative; left: 500px;">단위(원)</span></i>
+				<span class="box-title" style="position: relative; left: 500px;">단위(원)
+					<button id="nextBtn" class="btn btn-circle btn-xs waves-effect waves-light fa fa-refresh"></button>				
+				</span>
+				</i>
 				<!-- /.box-title -->
-					<div class="dropdown js__drop_down">
-						<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-						<ul class="sub-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else there</a></li>
-							<li class="split"></li>
-							<li><a href="#">Separated link</a></li>
-						</ul>
-						<!-- /.sub-menu -->
-					</div>
 					<!-- /.dropdown js__dropdown -->
+				<div id="consumptionPrint" class="row">
 					<canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
+				</div>
 				</div>
 			<!-- /.box-content -->		
 		</div>
@@ -221,7 +227,7 @@ $(function() {
 						<span class="box-title">&nbsp;&nbsp;1인 가구 성별 차트</span>
 					</i>
 						<span class="box-title" style="position: relative; left: 1270px;">단위(명)
-							<button id="prevBtn" class="btn btn-circle btn-xs waves-effect waves-light fa fa-refresh"></button>	
+							<button id="refreshBtn" class="btn btn-circle btn-xs waves-effect waves-light fa fa-refresh"></button>	
 						</span>
 					<!-- /.box-title -->		
 					<!-- /.dropdown js__dropdown -->

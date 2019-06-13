@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.sist.dao.MainDAO;
 import com.sist.vo.GenderAgeVO;
 import com.sist.vo.PersonalConsumptionVO;
+import com.sist.vo.PersonalConsumptionVO1;
 
 @Controller
 public class MainController {
@@ -44,8 +45,34 @@ public class MainController {
 		model.addAttribute("sidoName", city[0]);
 		model.addAttribute("json1", arr1.toJSONString());
 		
+		
+		
 		// 개인 소비지출
 		String[] color = {"#54a0ff", "#feca57", "#ff6b6b", "#48dbfb", "#1dd1a1",
+				  "#00d2d3", "#ff9ff3", "#5f27cd", "#c8d6e5", "#341f97"};
+		List<PersonalConsumptionVO1> list = dao.consumptionData1();
+		JSONArray arr2 = new JSONArray();
+		int j = 0;
+		for (PersonalConsumptionVO1 vo : list) {	
+			arr2.add(vo.getYear2018());
+			j++;
+			
+			if (j > 9)
+				break;
+			
+		}
+		System.out.println(arr2);
+		JSONArray colorJson = new JSONArray();
+		for (int i = 0; i < arr2.size(); i++) {
+			colorJson.add(color[i]);
+		}
+		
+		model.addAttribute("json2", arr2);
+		model.addAttribute("colorJson", colorJson);
+		
+		
+		
+		/*String[] color = {"#54a0ff", "#feca57", "#ff6b6b", "#48dbfb", "#1dd1a1",
 						  "#00d2d3", "#ff9ff3", "#5f27cd", "#c8d6e5", "#341f97"};
 		List<PersonalConsumptionVO> vo = dao.consumptionData();
 		JSONArray arr2 = new JSONArray();
@@ -85,13 +112,13 @@ public class MainController {
 			e.printStackTrace();
 		}
 		
-		model.addAttribute("arrLabel", arrLabel);
+		model.addAttribute("arrLabel", arrLabel);*/
 		
 		return "main/main";
 	}
 	
 	@RequestMapping("main/genderAjax.do")
-	public String ajaxController(Model model) {
+	public String ajaxController1(Model model) {
 		
 		// 시도별 분포
 		int num = (int)(Math.random()*15);
@@ -117,6 +144,13 @@ public class MainController {
 		model.addAttribute("json1", arr1.toJSONString());
 			
 		return "main/ajax/genderAjax";
+	}
+	
+	@RequestMapping("main/consumptionAjax.do")
+	public String ajaxController2(Model model) {
+		
+		
+		return "main/ajax/consumptionAjax";
 	}
 	
 }
