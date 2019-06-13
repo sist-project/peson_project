@@ -25,6 +25,14 @@ public class MeetVO {
 	private String rate;
 	private String host;
 	private String content;
+	private int rcount;
+	
+	public int getRcount() {
+		return rcount;
+	}
+	public void setRcount(int rcount) {
+		this.rcount = rcount;
+	}
 	public int getMno() {
 		return mno;
 	}

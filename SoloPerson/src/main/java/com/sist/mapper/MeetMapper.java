@@ -2,18 +2,12 @@ package com.sist.mapper;
 import java.util.*;
 import com.sist.vo.*;
 import org.apache.ibatis.annotations.Select;
-/*
- * SELECT A.*
-		FROM (SELECT mno,thumbnail,title,subtitle,price,rate,rownum as num
-		FROM (SELECT mno,thumbnail,title,subtitle,price,rate
-		FROM meet))A
-		WHERE num BETWEEN #{start} AND #{end}
- */
+
 public interface MeetMapper {
 	//¸®½ºÆ®
 	@Select("SELECT A.* "
-			+ "FROM (SELECT mno,thumbnail,title,subtitle,price,rate,rownum as num "
-			+ "FROM (SELECT mno,thumbnail,title,subtitle,price,rate FROM meet))A "
+			+ "FROM (SELECT mno,thumbnail,title,subtitle,price,rate,rcount,rownum as num "
+			+ "FROM (SELECT mno,thumbnail,title,subtitle,price,rate,rcount FROM meet))A "
 			+ "WHERE num BETWEEN #{start} AND #{end}")
 	public List<MeetVO> meetListData(Map map);
 	

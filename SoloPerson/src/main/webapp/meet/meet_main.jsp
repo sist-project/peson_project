@@ -8,11 +8,10 @@
 <title>Insert title here</title>
  
 <script type="text/javascript">
-/* $(function(){	
+$(function(){	
 	$('.gulist').click(function(){
 		var no=$(this).attr('id');
-		no=no.substring(2);
-		alert(no);
+		no=no.substring(2);		
 		
 		$.ajax({
 			type:'GET',
@@ -24,7 +23,7 @@
 			}
 		});
 	});
-}); */
+});
 </script>
 
 <link rel="stylesheet" href="../meet/map.css">
@@ -40,7 +39,7 @@
 		<!-- 리스트 -->
 		<div class="col-xs-8">
 			<div id="print">
-				<jsp:include page="${meetList_jsp }"></jsp:include>
+				<jsp:include page="list/meetList.jsp"></jsp:include>
 			</div>
 		</div>
 		

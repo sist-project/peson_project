@@ -43,7 +43,7 @@ public class MeetController {
 	    model.addAttribute("allPage",allPage);
 	    model.addAttribute("curpage",curpage);
 	    model.addAttribute("page",page);
-	    model.addAttribute("meetList_jsp","meetList.jsp");
+	    //model.addAttribute("meetList_jsp","meetList.jsp");
 	    
 		return "meet/meet_main";
 	}
@@ -65,13 +65,16 @@ public class MeetController {
 		model.addAttribute("list",list);
 		model.addAttribute("count",list.size());
 		
-		return "meet/meetList";
+		return "meet/list/meetList";
 	}
 	
 	@RequestMapping("meet/meet_detail.do")
 	public String meet_detail(String mno,Model model)
 	{
 		MeetVO vo=dao.meetDetailData(mno);
+		
+		List<Meet_ReplyVO> rList=dao.replyAllData(Integer.parseInt(mno));
+		model.addAttribute("rList",rList);
 		
 		model.addAttribute("vo",vo);
 		

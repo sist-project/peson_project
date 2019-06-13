@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -87,10 +90,30 @@
 					</table>	
 				</div>
 				
-				<div class="invoice-box">
-					<div class="comment">				
-						<h3>댓글</h3>
+				<div class="text-muted" style="width: 70%;">
+					<c:forEach var="content" items="${fn:split(vo.content, ', ') }">
+   						<p><img src="${fn:replace(content,'\'','')}"></p>   		 				
+					</c:forEach>
+				</div>
+				
+				<div class="invoice-box">						
+					<h4 class="box-title text-info text-left">후기</h4>	
+					<div class="text-right">
+						<button type="button" class="btn btn-default waves-effect waves-light" data-toggle="modal" data-target="#addTask">+ Add New</button>
 					</div>
+					
+					<c:forEach var="rvo" items="${rList }">
+						<div class="box-content">											
+							<div class="task-lists">				
+								<div class="title">${rvo.no }</div>				
+								<div class="title">${rvo.name }</div>
+								<div class="title">${rvo.db_day }</div>
+								<div class="title">${rvo.msg }</div>								
+							</div>						
+						</div>
+					</c:forEach>
+					<!-- /.box-content -->					
+					
 				</div>
 			</div>
 		</div>	
