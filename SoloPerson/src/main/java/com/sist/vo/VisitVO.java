@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class VisitVO {
-	private String title,content,img,addr;
-	private int vno;
+	private String title,content,img,addr,aside,hit;
+	private int no;
 }

@@ -47,10 +47,9 @@
 			<div class="row row-inline-block small-spacing js__isotope_items" >
 				<c:forEach var="vo" items="${vList }">
 				<div class="col-md-4 col-sm-6 col-tb-6 col-xs-12 js__isotope_item visit" data-lightview-group="group">
-					<a href="../visit_food/detail.do?vno=${vo.vno }" class="item-gallery">
+					<a href="../visit_food/detail.do?no=${vo.no }" class="item-gallery">
 						<img src="http://korean.visitseoul.net/${vo.img }" alt="" style=" height: 300px;">
 						<h2 class="title">${vo.title }</h2>
-						<input type="hidden" name=vno value="${vo.vno }">
 						<!-- /.title -->
 					</a>
 				</div>
@@ -58,10 +57,9 @@
 				<!-- /.col-md-4 col-sm-6 col-tb-6 col-xs-12 js__isotope_item -->
 				<c:forEach var="vo" items="${fList }">
 				<div class="col-md-4 col-sm-6 col-tb-6 col-xs-12 js__isotope_item eat" data-lightview-group="group">
-					<a href="../visit_food/detail1.do?fno=${vo.fno }" class="item-gallery">
+					<a href="../visit_food/detail1.do?no=${vo.no }" class="item-gallery">
 						<img src="${vo.img }" alt="" style=" height: 300px;">
 						<h2 class="title">${vo.title }<br>(${vo.kind })</h2>
-						<input type="hidden" name=vno value="${vo.fno }">
 					</a>
 				</div>
 				</c:forEach>

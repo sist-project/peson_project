@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class FoodVO {
 	private String img,addr,tel,kind,price,title,time;
-	private int fno;
+	private int no,hit;
 }
