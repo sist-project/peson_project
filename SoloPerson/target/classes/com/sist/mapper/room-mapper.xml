@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sist.mapper.room-mapper.xml">
+	<resultMap type="Room_ReplyVO" id="replyMap">
+		<result property="rno" column="rno"/>
+		<result property="name" column="name"/>
+		<result property="content" column="content"/>
+		<result property="pwd" column="pwd"/>
+		<result property="date" column="date"/>
+	</resultMap>
+	<parameterMap type="hashmap" id="replyList">
+		<parameter property="pno" mode="IN" javaType="java.lang.Integer"/>		
+		<parameter property="pResult" mode="OUT" jdbcType="CURSOR" resultMap="replyMap"/>
+	</parameterMap>
+	<select id="room_ReplyAllData" statementType="CALLABLE" parameterMap="replyList">
+		{CALL room_ReplyAllData(?,?)}
+	</select>
+	
+	<parameterMap type="hashmap" id="replyIn">
+		<parameter property="ppno" mode="IN" javaType="java.lang.Integer"/>
+		<parameter property="pname" mode="IN" javaType="java.lang.String"/>
+		<parameter property="pcontent" mode="IN" javaType="java.lang.String"/>
+		<parameter property="ppwd" mode="IN" javaType="java.lang.String"/>
+	</parameterMap>
+	<select id="room_replyInsertData" statementType="CALLABLE" parameterMap="replyIn">
+		{CALL room_replyInsertData(?,?,?,?)}
+	</select>
+</mapper>

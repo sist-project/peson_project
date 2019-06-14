@@ -3,8 +3,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.sist.vo.Meet_ReplyVO" alias="Meet_ReplyVO"/>
+		<typeAlias type="com.sist.vo.Room_replyVO" alias="Room_replyVO"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/sist/mapper/meet-mapper.xml"/>
+		<mapper resource="com/sist/mapper/room-mapper.xml"/>
 	</mappers>
 </configuration>

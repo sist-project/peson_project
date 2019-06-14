@@ -1,12 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function() {
+		$('.openReply').click(function() {
+			var pno = $(this).val();
+			$.ajax({
+				type : 'post',
+				url : 'roomReply.do',
+				data : {
+					'pno' : pno
+				},
+				success : function(res) {
+					$("#replyPrint").html(res);
+					//$('.pricing-plan').load("topFive.jsp");
+					
+					$('#replyPno').val(pno);
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="pricing-table">
@@ -33,37 +53,42 @@
 				</div>
 				<div class="td">
 					<del>${vo.retailprice }</del>
-					 <span class="text-danger">${vo.saleprice }</span>
+					<span class="text-danger">${vo.saleprice }</span>
 				</div>
-				<div class="td">
-					${vo.shippingfee }
-				</div>
+				<div class="td">${vo.shippingfee }</div>
 				<div class="td option">
-					<c:if test="${vo.option_select eq null && vo.option_color eq null }">
+					<c:if
+						test="${vo.option_select eq null && vo.option_color eq null }">
 						<i class="fa fa-times"></i>
 					</c:if>
 					<c:if test="${vo.option_select ne null && vo.option_color eq null}">
 						<ul>
 							<c:forEach items="${fn:split(vo.option_select, '/') }" var="item">
-	    						<li>${item}</li>
+								<li>${item}</li>
 							</c:forEach>
 						</ul>
 					</c:if>
-					<c:if test="${vo.option_select eq null && vo.option_color ne null}">	
+					<c:if test="${vo.option_select eq null && vo.option_color ne null}">
 						<ul>
 							<c:forEach items="${fn:split(vo.option_color, '/') }" var="item">
-	    						<li>${item}</li>
+								<li>${item}</li>
 							</c:forEach>
 						</ul>
 					</c:if>
 
 				</div>
 				<div class="td">
-					<a href="${vo.link}" target="_blank" class="btn-order js__popup_open"
+					<a href="${vo.link}" target="_blank"
+						class="btn-order js__popup_open"
 						data-target="#register-form-popup-2">ORDER NOW</a>
+					<button class="btn btn-sm btn-danger openReply"
+						value="${vo.productno}">후기</button>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
+	
+	<div id="replyPrint"></div>
+	
 </body>
 </html>
