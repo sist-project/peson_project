@@ -46,28 +46,28 @@ public class MeetDAO extends SqlSessionDaoSupport{
 	}
 	
 	//댓글리스트(상세보기)
-	public List<Meet_ReplyVO> replyAllData(int mno)
+	public List<Meet_ReplyVO> meet_replyAllData(int mno)
 	{
 		List<Meet_ReplyVO> rList=new ArrayList<Meet_ReplyVO>();
 		
 		Map map=new HashMap();
 		map.put("mno", mno);
 		
-		getSqlSession().update("replyAllData",map);
+		getSqlSession().update("meet_replyAllData",map);
 		rList=(List<Meet_ReplyVO>) map.get("pResult");
 		
 		return rList;
 	}
 	
 	//댓글 추가
-	public void replyInsertData(Meet_ReplyVO vo)
+	public void meet_replyInsertData(Meet_ReplyVO vo)
 	{		
 		Map map=new HashMap();
 		map.put("prno", vo.getRno());
 		map.put("pname", vo.getName());
 		map.put("pmsg", vo.getMsg());
 		
-		getSqlSession().update("replyInsertData",map);
+		getSqlSession().update("meet_replyInsertData",map);
 		
 	}
 	

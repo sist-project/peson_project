@@ -11,8 +11,8 @@
 		<parameter property="mno" mode="IN" javaType="java.lang.Integer"/>		
 		<parameter property="pResult" mode="OUT" jdbcType="CURSOR" resultMap="replyMap"/>
 	</parameterMap>
-	<select id="replyAllData" statementType="CALLABLE" parameterMap="replyList">
-		{CALL replyAllData(?,?)}
+	<select id="meet_replyAllData" statementType="CALLABLE" parameterMap="replyList">
+		{CALL meet_replyAllData(?,?)}
 	</select>
 	
 	
@@ -21,7 +21,7 @@
 		<parameter property="pname" mode="IN" javaType="java.lang.String"/>
 		<parameter property="pmsg" mode="IN" javaType="java.lang.String"/>
 	</parameterMap>
-	<select id="replyInsertData" statementType="CALLABLE" parameterMap="replyIn">
-		{CALL replyInsertData(?,?,?)}
+	<select id="meet_replyInsertData" statementType="CALLABLE" parameterMap="replyIn">
+		{CALL meet_replyInsertData(?,?,?)}
 	</select>
 </mapper>

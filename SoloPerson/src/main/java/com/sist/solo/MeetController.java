@@ -73,7 +73,7 @@ public class MeetController {
 	{
 		MeetVO vo=dao.meetDetailData(mno);
 		
-		List<Meet_ReplyVO> rList=dao.replyAllData(Integer.parseInt(mno));
+		List<Meet_ReplyVO> rList=dao.meet_replyAllData(Integer.parseInt(mno));
 		model.addAttribute("rList",rList);
 		
 		model.addAttribute("vo",vo);
@@ -84,7 +84,7 @@ public class MeetController {
 	@RequestMapping("meet/replyInsert.do")
 	public String meet_replyInsert(Meet_ReplyVO vo)
 	{
-		dao.replyInsertData(vo);
+		dao.meet_replyInsertData(vo);
 		return "redirect:meet_detail.do?pageName=meet&mno="+vo.getRno();
 	}
 }
