@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> 
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,37 +12,17 @@
 $(function() { 
 	// 시도별 비율 분포
 	$(".sidoArea").click(function() {
-		var $this = $(this).attr("id");		
-		console.log(location.hash);
+		var $thisId = $(this).attr("id");
+		var $thisSi = $(this).attr("si");
+		
 		$.ajax({
-			url : "sido.json",
+			url : "cityAjax.do",
 			type : "post",
-			dataType : "json",
+			data : {"id":$thisId, "siName":$thisSi},
 			success : function(res) {
-				for (var i = 0; i < 18; i++) {
-					if (res.images[i].title === $this) {
-						var $url = res.images[i].url;		
-						$("#sidoPrint").html("<div class='row'>"
-											+  "<button class='backBtn btn btn-rounded btn-bordered btn-xs waves-effect waves-light' style='position: relative; left: 300px;'>Back</button>"
-											+"</div>"
-										    +  "<img src=" + $url + " usemap=#seoulMap>");
-						$(".backBtn").click(function() {
-							$url = res.images[17].url;
-							$id = res.koreaCoords[0].id;
-							$coords = res.koreaCoords[0].coords;
-							con
-							
-							$("#sidoPrint").html("<img src=" + $url + " width='300' usemap=#seoulMap>"
-									 		   + "<map name='koreaMap' id='koreaMap'>"
-									 		   + "<area id=" + $id +" class='sidoArea' shape='rect' coords=" + $coords + ">"
-									 		   + "</map>");
-						});
-							
-						
-					}				
-				}		
+				$("#sidoPrint").html(res);
 			}
-			
+	
 		});
 		
 	});
@@ -163,42 +144,43 @@ $(function() {
 			<div class="box-content">
 				<div class="row">
 					<div class="col-lg-6">
-						<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포</span></i>
+						<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포(${siName })</span></i>
+						<span class="box-title" style="position: relative; left: 500px;">단위(%)</span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-4" id="sidoPrint">
 						<img src="../assets/images/main/south_korea.jpg" width="300" usemap="#koreaMap">
 						<map name="koreaMap" id="koreaMap">
-							<area id="seoul" class="sidoArea" shape="rect" coords="79,85,97,105">
-							<area id="incheon" class="sidoArea" shape="rect" coords="60,95,77,115">
-							<area id="gyeonggi" class="sidoArea" shape="rect" coords="83,118,104,138">
-							<area id="gangwon" class="sidoArea" shape="rect" coords="186,51,206,74">
-							<area id="chungcheongbukdo" class="sidoArea" class="sidoArea" shape="rect" coords="143,138,160,160">
-							<area id="chungcheongnamdo" class="sidoArea" shape="rect" coords="52,168,71,190">
-							<area id="sejong" class="sidoArea" shape="rect" coords="109,184,126,203">
-							<area id="daejeon" class="sidoArea" shape="rect" coords="111,206,129,227">
-							<area id="gyeongsangbukdo" class="sidoArea" shape="rect" coords="212,179,230,200">
-							<area id="gyeongsangnamdo" class="sidoArea" shape="rect" coords="165,298,180,320">
-							<area id="daegu" class="sidoArea" shape="rect" coords="212,249,229,266">
-							<area id="ulsan" class="sidoArea" shape="rect" coords="253,275,270,297">
-							<area id="busan" class="sidoArea" shape="rect" coords="234,348,251,269">
-							<area id="jeollabukdo" class="sidoArea" shape="rect" coords="77,259,91,279">
-							<area id="jeollanamdo" class="sidoArea" shape="rect" coords="47,340,64,359">
-							<area id="gwangju" class="sidoArea" shape="rect" coords="67,314,82,332">
-							<area id="jeju" class="sidoArea" shape="rect" coords="48,434,65,456">
+							<area id="seoul" si="서울특별시" class="sidoArea" shape="rect" coords="79,85,97,105">
+							<area id="incheon" si="인천광역시" class="sidoArea" shape="rect" coords="60,95,77,115">
+							<area id="gyeonggi" si="경기도" class="sidoArea" shape="rect" coords="83,118,104,138">
+							<area id="gangwon" si="강원도" class="sidoArea" shape="rect" coords="186,51,206,74">
+							<area id="chungcheongbukdo" si="충청북도" class="sidoArea" class="sidoArea" shape="rect" coords="143,138,160,160">
+							<area id="chungcheongnamdo" si="충청남도" class="sidoArea" shape="rect" coords="52,168,71,190">
+							<area id="sejong" si="세종특별자치시" class="sidoArea" shape="rect" coords="109,184,126,203">
+							<area id="daejeon" si="대전광역시" class="sidoArea" shape="rect" coords="111,206,129,227">
+							<area id="gyeongsangbukdo" si="경상북도" class="sidoArea" shape="rect" coords="212,179,230,200">
+							<area id="gyeongsangnamdo" si="경상남도" class="sidoArea" shape="rect" coords="165,298,180,320">
+							<area id="daegu" si="대구광역시" class="sidoArea" shape="rect" coords="212,249,229,266">
+							<area id="ulsan" si="울산광역시" class="sidoArea" shape="rect" coords="253,275,270,297">
+							<area id="busan" si="부산광역시" class="sidoArea" shape="rect" coords="234,348,251,269">
+							<area id="jeollabukdo" si="전라북도" class="sidoArea" shape="rect" coords="77,259,91,279">
+							<area id="jeollanamdo" si="전라남도" class="sidoArea" shape="rect" coords="47,340,64,359">
+							<area id="gwangju" si="광주광역시" class="sidoArea" shape="rect" coords="67,314,82,332">
+							<area id="jeju" si="제주도" class="sidoArea" shape="rect" coords="48,434,65,456">
 						</map>									
 					</div>
 					<div class="col-lg-4 text-center">
-						<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년</h4>
+						<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년(${guName })</h4>
 						<div class="knob-wrap">
-							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#ff8acc" data-readOnly=true data-thickness=".4" value="30"  />
+							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#ff8acc" data-readOnly=true data-thickness=".4" value="${get2016 }"  />		
 						</div>
 					</div>
 					<div class="col-lg-4 text-center">
-						<h4 class="box-title knob_year" style="margin-bottom: 15px; margin-top: 15px;">2017년</h4>
+						<h4 class="box-title knob_year" style="margin-bottom: 15px; margin-top: 15px;">2017년(${guName })</h4>
 						<div class="knob-wrap">
-							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#00aeff" data-readOnly=true data-thickness=".4" value="30"  />
+							<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#00aeff" data-readOnly=true data-thickness=".4" value="${get2017 }"  />
 						</div>
 					</div>						
 				</div>

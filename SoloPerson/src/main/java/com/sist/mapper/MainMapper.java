@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Select;
 import com.sist.vo.GenderAgeVO;
 import com.sist.vo.PersonalConsumptionVO1;
+import com.sist.vo.SidoPercentVO;
 
 public interface MainMapper {
 	
@@ -15,5 +16,11 @@ public interface MainMapper {
 	
 	@Select("SELECT * FROM totalConsumption1 WHERE col1=#{col1}")
 	public List<PersonalConsumptionVO1> consumptionData1(String name);
+	
+	@Select("SELECT * FROM sidoPercent WHERE si='Àü±¹'")
+	public SidoPercentVO southKorea();
+		
+	@Select("SELECT * from sidoPercent WHERE si=#{si} ORDER BY no")
+	public List<SidoPercentVO> southKoreaPercent(String si);
 	
 }

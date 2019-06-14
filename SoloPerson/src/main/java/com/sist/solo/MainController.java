@@ -1,7 +1,5 @@
 package com.sist.solo;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.sist.dao.MainDAO;
 import com.sist.vo.GenderAgeVO;
 import com.sist.vo.PersonalConsumptionVO1;
+import com.sist.vo.SidoPercentVO;
 
 @Controller
 public class MainController {
@@ -80,6 +79,15 @@ public class MainController {
 		model.addAttribute("colorJson", colorJson);
 		model.addAttribute("arrLabel", arrLabel);
 		model.addAttribute("consumptionName", nameList.get(1));
+		
+		// 전국 인구 비율 분포
+		SidoPercentVO vo = dao.southKorea();
+		
+		model.addAttribute("siName", vo.getSi());
+		model.addAttribute("guName", vo.getGu());
+		model.addAttribute("get2016", vo.getYear2016());
+		model.addAttribute("get2017", vo.getYear2017());
+		
 		return "main/main";
 	}
 	
@@ -155,6 +163,24 @@ public class MainController {
 		model.addAttribute("consumptionName", nameList.get(num));
 		
 		return "main/ajax/consumptionAjax";
+	}
+	
+	@RequestMapping("main/cityAjax.do")
+	public String ajaxController2(String id, String siName, Model model) {
+		// 전국 2016, 2017데이터
+		List<SidoPercentVO> list= dao.southKoreaPercent(siName);
+		
+		for (SidoPercentVO vo : list) {
+			System.out.print(vo.getSi() + " ");
+			System.out.print(vo.getGu() + " ");
+			System.out.print(vo.getYear2016() + " ");
+			System.out.print(vo.getYear2017() + " ");
+			System.out.println("===========");
+		}
+		
+		model.addAttribute("mapName", id);
+		
+		return "main/ajax/cityAjax";
 	}
 	
 }

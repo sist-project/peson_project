@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.sist.mapper.MainMapper;
 import com.sist.vo.GenderAgeVO;
 import com.sist.vo.PersonalConsumptionVO1;
+import com.sist.vo.SidoPercentVO;
 
 @Repository
 public class MainDAO {
@@ -25,6 +26,14 @@ public class MainDAO {
 	
 	public List<PersonalConsumptionVO1> consumptionData1(String name) {
 		return mapper.consumptionData1(name);
+	}
+	
+	public SidoPercentVO southKorea() {
+		return mapper.southKorea();
+	}
+	
+	public List<SidoPercentVO> southKoreaPercent(String si) {
+		return mapper.southKoreaPercent(si);
 	}
 	
 }
