@@ -16,10 +16,12 @@ $(function() {
 			data : {'cateno' : cateno},
 			success : function(res) {
 				$(".pricing-plan").html(res);		
-				//$('.pricing-plan').load("topFive.jsp");
+				
 			}		
 		});
 	});
+	
+	
 });
 </script>
 <style type="text/css">
@@ -79,6 +81,14 @@ div.td.option{
 
 .col-five:nth-child(6) > .thead{
  background-color: #2980b9;
+}
+
+.box-contact > .reply_name , .box-contact > .text-muted > .reply_cont {
+	color: black;	
+}
+
+.rpl_list > .reply_box{
+    margin-top: 0px;
 }
 </style>
 </head>

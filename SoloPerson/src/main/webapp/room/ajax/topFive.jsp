@@ -11,6 +11,7 @@
 	$(function() {
 		$('.openReply').click(function() {
 			var pno = $(this).val();
+			
 			$.ajax({
 				type : 'post',
 				url : 'roomReply.do',
@@ -19,12 +20,15 @@
 				},
 				success : function(res) {
 					$("#replyPrint").html(res);
-					//$('.pricing-plan').load("topFive.jsp");
 					
 					$('#replyPno').val(pno);
 				}
 			});
+			
+			var offset = $(".openReply").offset();
+            $('html, body').animate({scrollTop : offset.top});
 		});
+		
 	});
 </script>
 </head>
@@ -47,7 +51,7 @@
 				</div>
 				<div class="td pname">
 					<ul>
-						<li class="text-purple"><b>${vo.productname}</b></li>
+						<li class="text-purple productname"><b>${vo.productname}</b></li>
 						<li>${vo.content}</li>
 					</ul>
 				</div>

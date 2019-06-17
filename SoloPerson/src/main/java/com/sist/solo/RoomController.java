@@ -41,20 +41,22 @@ public class RoomController {
 		model.addAttribute("fList", fList);
 		return "room/ajax/topFive";
 	}
-	
+
 	@RequestMapping("room/roomReply.do")
-	public String roomReply(int pno, Model model){
+	public String roomReply(int pno, Model model) {
 		List<Room_replyVO> rList = dao.room_ReplyAllData(pno);
-		
+
 		model.addAttribute("rList", rList);
-		
+
 		return "room/ajax/roomReply";
 	}
-	
+
 	@RequestMapping("room/room_replyInsert.do")
-	public String room_replyInsertData(Room_replyVO vo){
+	public String room_replyInsertData(Room_replyVO vo, Model model) {
 		dao.room_replyInsertData(vo);
-		
+		List<Room_replyVO> rList = dao.room_ReplyAllData(vo.getPno());
+
+		model.addAttribute("rList", rList);
 		return "room/ajax/roomReply";
 	}
 }
