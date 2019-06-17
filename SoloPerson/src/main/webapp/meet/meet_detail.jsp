@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -61,6 +62,8 @@ $(function(){
 			success:function(response)
 			{				
 				$('#time').html(response);
+				var offset = $(".rday").offset();
+	            $('html, body').animate({scrollTop : offset.top});
 			}
 		})
 	});
@@ -97,7 +100,7 @@ $(function(){
 												<span class="ico ti-money"></span> 가격
 											</td>
 											<td class="text-left" style="padding-left: 50px;">
-												${vo.price}
+												<fmt:formatNumber value="${vo.price }" pattern="#,###" /> 원
 											</td>
 										</tr>
 										<tr>											
@@ -178,7 +181,7 @@ $(function(){
 		<!-- 신청 -->
 		<div class="col-lg-4">
 			<div class="box-contact">
-				<h3>신청</h3>						
+				<h3 class="text-left">신청</h3>						
 				<div class="box-content reserve-area">
 					<h4>신청일 선택</h4>
 					<table class="table">						
@@ -239,7 +242,7 @@ $(function(){
 				<div class="box-content reserve-area" id="time">					
 				</div>
 				
-				<div class="box-content reserve-area">
+				<div class="box-content" style="height: 250px;">
 					<h4>신청 정보</h4>
 					<table class="table text-left">						
 						<tr>
@@ -255,7 +258,7 @@ $(function(){
 							<td class="text-center">
 								<form method="post" action="reserve.do">
 									<!-- ㅡmno,dno -->
-									<input type="hidden" name="rmno" value="${vo.mno }">
+									<input type="hidden" name="rmno" id="rm" value="${vo.mno }">
 									<input type="hidden" name="rdno" id="rd">
 									<input type=hidden name="rtitle" id="t"> 
 									<input type=hidden name="rdate" id="r"> 

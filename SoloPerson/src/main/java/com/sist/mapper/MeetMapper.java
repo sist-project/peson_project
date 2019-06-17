@@ -40,13 +40,13 @@ public interface MeetMapper {
 	
 	
 	//신청자 수 확인
-	@Select("SELECT COUNT(*) FROM meet_reserve WHERE rmno=#{rmno} AND rdno=#{rdno}")
-	public int meetReserveCount(Map map);
+	@Select("SELECT nowInwon FROM meet_reserve WHERE rmno=#{rmno} AND rdno=#{rdno} AND rtime=#{rtime}")
+	public String meetReserveCount(Map map);
 	//신청 insert
 	@Insert("INSERT INTO meet_reserve VALUES(#{rmno},#{rdno},#{rtitle},#{rdate},#{rtime},0,5)")
 	public void meetReserveInsert(Meet_ReserveVO vo);
 	//신청자수 증가
-	@Update("UPDATE meet_reserve SET nowInwon=nowInwon+1 WHERE rmno=#{rmno} AND rdno=#{rdno}")
+	@Update("UPDATE meet_reserve SET nowInwon=nowInwon+1 WHERE rmno=#{rmno} AND rdno=#{rdno} AND rtime=#{rtime}")
 	public void meetReserveIncrement(Map map);
 	
 }

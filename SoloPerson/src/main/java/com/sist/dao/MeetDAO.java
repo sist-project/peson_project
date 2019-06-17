@@ -90,7 +90,7 @@ public class MeetDAO extends SqlSessionDaoSupport{
 		
 	//신청
 	//신청자 수 확인
-	public int meetReserveCount(Map map)
+	public String meetReserveCount(Map map)
 	{
 		return mapper.meetReserveCount(map);
 	}
@@ -104,4 +104,5 @@ public class MeetDAO extends SqlSessionDaoSupport{
 	{
 		mapper.meetReserveIncrement(map);
 	}
+	
 }

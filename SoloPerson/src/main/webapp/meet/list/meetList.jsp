@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,7 +43,9 @@ cursor: pointer;
 									</td>
 								</tr>
 								<tr>						
-									<td colspan="2">${vo.price } 원</td>
+									<td colspan="2">
+										<fmt:formatNumber value="${vo.price }" pattern="#,###" /> 원
+									</td>
 								</tr>
 							</tbody>
 						</table>

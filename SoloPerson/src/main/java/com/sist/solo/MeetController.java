@@ -162,16 +162,18 @@ public class MeetController {
 	{	
 		int rmno=vo.getRmno();
 		int rdno=vo.getRdno();
+		String rtime=vo.getRtime();
+		
 		Map map=new HashMap();
 	    map.put("rmno",rmno);
 	    map.put("rdno",rdno);
+		map.put("rtime", rtime);
 		
-	    System.out.println(rmno);
-	    System.out.println(rdno);
-	    //신청자 수 확인
-	    int rcount=dao.meetReserveCount(map);
 	    
-	    if(rcount==0)	//신청자수 0 => 신청 추가 => 신청자수 증가
+	    //신청자 수 확인
+	    String rcount=dao.meetReserveCount(map);
+	    
+	    if(rcount==null || Integer.parseInt(rcount)==0)	//신청자수 0 => 신청 추가 => 신청자수 증가
 	    {
 	    	dao.meetReserveInsert(vo);
 	    	dao.meetReserveIncrement(map);
@@ -183,6 +185,23 @@ public class MeetController {
 	    
 	    
 		return "redirect:meet_detail.do?pageName=meet&mno="+vo.getRmno();
+	}
+	
+	@RequestMapping("meet/reserve_ok.do")
+	public String meet_reserve_ok(String rmno,String rdno,String rtime,Model model)
+	{
+		Map map=new HashMap();
+	    map.put("rmno",rmno);
+	    map.put("rdno",rdno);
+		map.put("rtime", rtime);		
+		
+		String rcount=dao.meetReserveCount(map);	
+		
+		if(rcount==null)
+			rcount="0";
+		model.addAttribute("rcount",rcount);
+		
+		return "meet/reserve/reserve_ok";
 	}
 	
 	@RequestMapping("meet/replyInsert.do")
