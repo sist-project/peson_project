@@ -57,7 +57,7 @@ public class MeetDAO extends SqlSessionDaoSupport{
 		rList=(List<Meet_ReplyVO>) map.get("pResult");
 		
 		return rList;
-	}
+	}	
 	
 	//댓글 추가
 	public void meet_replyInsertData(Meet_ReplyVO vo)
@@ -71,4 +71,37 @@ public class MeetDAO extends SqlSessionDaoSupport{
 		
 	}
 	
+	//신청일
+	public String meetReserveDate(String mno)
+	{
+		return mapper.meetReserveDate(mno);
+	}
+	
+	//예약 가능 시간
+	public String meetReserveTime(String dno)
+	{
+		return mapper.meetReserveTime(dno);
+	}
+	
+	public String meetTimeData(int tno)
+	{
+		return mapper.meetTimeData(tno);
+	}
+		
+	//신청
+	//신청자 수 확인
+	public int meetReserveCount(Map map)
+	{
+		return mapper.meetReserveCount(map);
+	}
+	//신청 insert
+	public void meetReserveInsert(Meet_ReserveVO vo)
+	{
+		mapper.meetReserveInsert(vo);
+	}
+	//신청자수 증가
+	public void meetReserveIncrement(Map map)
+	{
+		mapper.meetReserveIncrement(map);
+	}
 }

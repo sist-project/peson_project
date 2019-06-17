@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.sist.dao.*;
 import com.sist.vo.*;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 @Controller
 public class MeetController {
@@ -70,15 +72,117 @@ public class MeetController {
 	
 	@RequestMapping("meet/meet_detail.do")
 	public String meet_detail(String mno,Model model)
-	{
+	{		
+		//상세정보
 		MeetVO vo=dao.meetDetailData(mno);
-		
+		model.addAttribute("vo",vo);
+		//
+		//후기
 		List<Meet_ReplyVO> rList=dao.meet_replyAllData(Integer.parseInt(mno));
 		model.addAttribute("rList",rList);
+		//
+				
+		//달력 출력
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
+		String today = sdf.format(date);
+		StringTokenizer st = new StringTokenizer(today, "-");
+		int year = Integer.parseInt(st.nextToken());
+		int month = Integer.parseInt(st.nextToken());
+		int day = Integer.parseInt(st.nextToken());
+
+		// 요일 1일 ==> 5월 1일 요일 (수요일)
+		Calendar cal = Calendar.getInstance();
+		// Calendar 객체 생성
+		// 날짜 설정 => 요일 구한다
+		cal.set(Calendar.YEAR, year);
+		cal.set(Calendar.MONTH, month - 1);// month=>0시작
+		cal.set(Calendar.DATE, 1);
+
+		int week = cal.get(Calendar.DAY_OF_WEEK);// 요일 구하기
+		String[] strWeek = { "일", "월", "화", "수", "목", "금", "토" };
+		int lastDay = cal.getActualMaximum(Calendar.DATE);// 31
 		
-		model.addAttribute("vo",vo);
+		// date.jsp로 데이터 전송
+		model.addAttribute("year",year);
+		model.addAttribute("month",month);
+		model.addAttribute("day",day);
+		model.addAttribute("week",week);
+		model.addAttribute("lastDay",lastDay);
+		model.addAttribute("strWeek",strWeek);
 		
+		// 예약 가능한 날짜 
+		String res=dao.meetReserveDate(mno);
+		int[] rdata=new int[lastDay];
+		StringTokenizer st1=new StringTokenizer(res, ",");		
+		
+		while (st1.hasMoreTokens())// 분해한 갯수만큼 수행
+		{
+			int rno = Integer.parseInt(st1.nextToken());
+
+			for (int j = 0; j < rdata.length; j++) 
+			{
+				if (j == (rno - 1) && rno >= day) 
+				{
+					rdata[j] = rno;
+				}
+			}
+		}
+		
+		model.addAttribute("rdata",rdata);
+		//
+		
+		
+				
 		return "meet/meet_detail";
+	}
+	
+	@RequestMapping("meet/time.do")
+	public String meet_time(String day,Model model)
+	{				
+		String time=dao.meetReserveTime(day);
+		
+		StringTokenizer st=new StringTokenizer(time, ",");
+		List<String> list=new ArrayList<String>();
+		
+		while(st.hasMoreTokens())
+		{
+			int tno = Integer.parseInt(st.nextToken());
+			String s = dao.meetTimeData(tno);
+			list.add(s);
+		}
+		
+		model.addAttribute("list",list);
+		
+		return "meet/reserve/time";
+	}	
+	
+	@RequestMapping("meet/reserve.do")
+	public String meet_reserve(Meet_ReserveVO vo,Model model)
+	{	
+		int rmno=vo.getRmno();
+		int rdno=vo.getRdno();
+		Map map=new HashMap();
+	    map.put("rmno",rmno);
+	    map.put("rdno",rdno);
+		
+	    System.out.println(rmno);
+	    System.out.println(rdno);
+	    //신청자 수 확인
+	    int rcount=dao.meetReserveCount(map);
+	    
+	    if(rcount==0)	//신청자수 0 => 신청 추가 => 신청자수 증가
+	    {
+	    	dao.meetReserveInsert(vo);
+	    	dao.meetReserveIncrement(map);
+	    }
+	    else	//신청자수 증가
+	    {	
+	    	dao.meetReserveIncrement(map);
+	    }
+	    
+	    
+		return "redirect:meet_detail.do?pageName=meet&mno="+vo.getRmno();
 	}
 	
 	@RequestMapping("meet/replyInsert.do")
@@ -86,5 +190,7 @@ public class MeetController {
 	{
 		dao.meet_replyInsertData(vo);
 		return "redirect:meet_detail.do?pageName=meet&mno="+vo.getRno();
-	}
+	}	
+	
+	
 }
