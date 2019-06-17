@@ -39,7 +39,7 @@
 							<!-- /.nav-tabs -->
 							<div class="tab-content" id="myTabContent-justified" style="padding-bottom: 30px;">
 								<div class="tab-pane fade in active" role="tabpanel" id="home-justified" aria-labelledby="home-tab-justified">
-									<div class="col-lg-6 col-xs-12">
+						<!-- 			<div class="col-lg-6 col-xs-12">
 									<div class="box-content" style="height: 216px;">
 										<h4 class="box-title">카드사</h4>
 								
@@ -98,8 +98,8 @@
 									</div>
 								
 								</div>
-								
-								<div class="col-lg-6 col-xs-12">
+								 -->
+						<!-- 		<div class="col-lg-6 col-xs-12">
 									<div class="box-content">
 										<h4 class="box-title">혜택</h4>
 					
@@ -195,7 +195,7 @@
 								</div>
 									<div>
 									<button type="button" class="btn btn-primary btn-rounded waves-effect waves-light" style=" left: 1410px;top: 12px;">Search</button>
-									</div>
+									</div> -->
 									
 								
 								<c:forEach var="vo" items="${cardList }">
@@ -231,7 +231,7 @@
 								<div class="tab-pane fade" role="tabpanel" id="profile-justified" aria-labelledby="profile-tab-justified">
 									
 									
-									<div class="col-lg-6 col-xs-12">
+									<!-- <div class="col-lg-6 col-xs-12">
 										<div class="box-content" style="height: 216px">
 											<h4 class="box-title">카드사</h4>
 									
@@ -401,7 +401,7 @@
 									
 									<div>
 									<button type="button" class="btn btn-primary btn-rounded waves-effect waves-light" style=" left: 1410px;top: 12px;">Search</button>
-									</div>
+									</div> -->
 									
 									<c:forEach var="vo1" items="${checkcardList }">
 								<div class="col-lg-4 col-md-6 col-xs-12">
@@ -441,9 +441,10 @@
 							 <td>
 							  <img src="${vo5.poster }" width="200px" class="cardimg">
 							 </td>
-							 <td style="padding-top: 40px;">
+							 <td>
 							  <h4>${vo5.cname }</h4>
-							  <h5>${vo5.bank }</h5>
+							  <h5>${vo5.bank }</h5><br>
+							  <h6>${vo5.ccontent }</h6>
 							 </td>
 							 <td>
 							<a href="detail.do?cno=${vo5.cno }"><input type="button" value="상세보기" class="btn btn-sm btn-primary rankBtn" id="rankBtn" style="margin-top: 45px;"></a>

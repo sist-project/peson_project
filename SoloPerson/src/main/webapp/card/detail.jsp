@@ -43,7 +43,7 @@
 							 <td>${vo.benefit }</td>
 					        </tr>
 					       <tr>
-					        <td>
+					        <td class="text-center" colspan="2">
 					         <input type="button" value="¸ñ·Ï" onclick="javascript:history.back()" class="btn btn-sm btn-danger">
 					        </td>
 					       </tr>
