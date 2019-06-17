@@ -1,8 +1,10 @@
 package com.sist.solo;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import com.sist.dao.MainDAO;
 import com.sist.vo.GenderAgeVO;
 import com.sist.vo.PersonalConsumptionVO1;
 import com.sist.vo.SidoPercentVO;
+import com.sist.vo.SouthKoreaJsonVO;
 
 @Controller
 public class MainController {
@@ -168,17 +171,40 @@ public class MainController {
 	@RequestMapping("main/cityAjax.do")
 	public String ajaxController2(String id, String siName, Model model) {
 		// 전국 2016, 2017데이터
-		List<SidoPercentVO> list= dao.southKoreaPercent(siName);
+		List<SidoPercentVO> list = dao.southKoreaPercent(siName);
 		
-		for (SidoPercentVO vo : list) {
-			System.out.print(vo.getSi() + " ");
-			System.out.print(vo.getGu() + " ");
-			System.out.print(vo.getYear2016() + " ");
-			System.out.print(vo.getYear2017() + " ");
-			System.out.println("===========");
+		List<SouthKoreaJsonVO> jsonList = new ArrayList<SouthKoreaJsonVO>();
+				
+	    String seoulStr = "{\"seoul\":[" + "{\"id\":\"도봉구\", \"coords\":\"216,17,244,58\", \"year2016\":\"23\", \"year2017\":\"23\"},"
+				 						 + "{\"id\":\"강북구\", \"coords\":\"191,57,224,76\", \"year2016\":\"29\", \"year2017\":\"31\"},"
+				 						 + "{\"id\":\"노원구\", \"coords\":\"252,54,283,79\", \"year2016\":\"23\", \"year2017\":\"24\"} ]}";
+		
+		try {
+			JSONParser jsonParser = new JSONParser();
+			JSONObject jsonObj = (JSONObject) jsonParser.parse(seoulStr);
+			JSONArray arr3 = (JSONArray) jsonObj.get("seoul");
+			
+			for (int i = 0; i < arr3.size(); i++) {
+				JSONObject tempObj = (JSONObject) arr3.get(i);
+				SouthKoreaJsonVO vo = new SouthKoreaJsonVO();
+				
+				vo.setId((String) tempObj.get("id"));
+				vo.setCoords((String) tempObj.get("coords"));
+				vo.setYear2016((String)tempObj.get("year2016"));
+				vo.setYear2017((String)tempObj.get("year2017"));
+				
+				jsonList.add(vo);
+				
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
+
+		model.addAttribute("dataList", list);
 		model.addAttribute("mapName", id);
+		model.addAttribute("jsonList", jsonList);
 		
 		return "main/ajax/cityAjax";
 	}

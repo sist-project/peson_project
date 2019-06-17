@@ -6,8 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
-
 <script type="text/javascript">
 $(function() { 
 	// 시도별 비율 분포
@@ -128,7 +126,7 @@ $(function() {
 
 </script>
 <style type="text/css">
-#sidoPrint {
+#print {
 	width: 450px;
 	height: 500px;
 }
@@ -141,7 +139,7 @@ $(function() {
 <body>
 	<div class="row small-spacing">
 		<div class="col-lg-6 col-md-12">
-			<div class="box-content">
+			<div class="box-content" id="sidoPrint">
 				<div class="row">
 					<div class="col-lg-6">
 						<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포(${siName })</span></i>
@@ -149,7 +147,7 @@ $(function() {
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4" id="sidoPrint">
+					<div class="col-lg-4" id="print">
 						<img src="../assets/images/main/south_korea.jpg" width="300" usemap="#koreaMap">
 						<map name="koreaMap" id="koreaMap">
 							<area id="seoul" si="서울특별시" class="sidoArea" shape="rect" coords="79,85,97,105">
@@ -233,7 +231,6 @@ $(function() {
 		<!-- /.col-lg-6 col-xs-12 -->
 	</div>
 	<!-- /.row -->
-
 </body>
 
 </html>
