@@ -16,11 +16,19 @@ $(function() {
 	// 해당 시/구 인원분포 비율	
 	$(".sidoArea").click(function() {
 		var $thisId = $(this).attr("id");
-		var $this2016 = parseInt($(this).attr("year2016"));
-		var $this2017 = parseInt($(this).attr("year2017"));
+		var $this2016 = $(this).attr("year2016");
+		var $this2017 = $(this).attr("year2017");
 		
-		alert(typeof $this2016);
-				
+		$.ajax({
+			url : "graphAjax.do",
+			type : "post",
+			data : {"year2016":$this2016, "year2017":$this2017, "gu":$thisId},
+			success : function(res) {
+				$("#printGraph").html(res);
+			}
+	
+		});
+		
 		$(".year2016").val($this2016);
 		$(".year2017").val($this2017);
 		
@@ -61,11 +69,11 @@ width: 79px;
 </style>
 </head>
 <body>
-	<div class="row" id="sidoPrint">
+	<div class="row">
 		<div class="row">
 			<div class="col-lg-6">
 				<i class="fa fa-pie-chart"><span class="box-title">&nbsp;&nbsp;시/도별 비율 분포(${siName })</span></i>
-				<span class="box-title" style="position: relative; left: 500px;">단위(%)</span>
+				<span class="box-title" style="position: relative; left: 450px;">단위(%)</span>
 			</div>
 		</div>
 		<div class='row row1'>
@@ -80,25 +88,19 @@ width: 79px;
 					</c:forEach>
 				</map>
 			</div>
-			
-			<div class="col-lg-3">
-				<div class="box-content">
-					<div class="statistics-box with-icon">
-						<i class="ico fa fa-users text-primary"></i>
-						<h2 class="counter text-primary">283</h2>
-						<p class="text">Some text here</p>
+			<div class="row" id="printGraph">
+				<div class="col-lg-4 text-center">
+					<h4 class="box-title knob_year" style="margin-bottom: 15px;">2016년(전국)</h4>
+					<div class="knob-wrap">
+						<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#ff8acc" data-readOnly=true data-thickness=".4" value="28"  />		
 					</div>
 				</div>
-			</div>	
-			<div class="col-lg-3 col-md-6 col-xs-12">
-				<div class="box-content">
-					<div class="statistics-box with-icon">
-						<i class="ico fa fa-users text-primary"></i>
-						<h2 class="counter text-primary">283</h2>
-						<p class="text">Some text here</p>
+				<div class="col-lg-4 text-center">
+					<h4 class="box-title knob_year" style="margin-bottom: 15px; margin-top: 15px;">2017년(전국)</h4>
+					<div class="knob-wrap">
+						<input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2" data-fgColor="#00aeff" data-readOnly=true data-thickness=".4" value="29"  />
 					</div>
 				</div>
-				<!-- /.box-content -->
 			</div>
 		</div>
 	</div>
