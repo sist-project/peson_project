@@ -24,14 +24,14 @@
 				<li id="main" class="menu1 current">
 					<a class="waves-effect" href="../main/main.do?pageName=main"><i class="menu-icon mdi mdi-home"></i><span>1인 가구 통계</span></a>
 				</li>
-				<li class="menu1 current">
-					<a class="waves-effect" href="../mart/mart.do"><i class="menu-icon mdi mdi-store"></i><span>편의점 BEST</span></a>
+				<li id="mart" class="menu1 current">
+					<a class="waves-effect" href="../mart/mart.do?pageName=mart"><i class="menu-icon mdi mdi-store"></i><span>편의점 BEST</span></a>
 				</li>
 				<li id="room" class="menu1 current">
 					<a class="waves-effect" href="../room/room.do?pageName=room"><i class="menu-icon mdi mdi-lamp"></i><span>원룸 인테리어</span></a>
 				</li>
-				<li class="menu1 current">
-					<a class="waves-effect" href="../card/card.do"><i class="menu-icon mdi mdi-credit-card"></i><span>카드 추천</span></a>
+				<li id="card" class="menu1 current">
+					<a class="waves-effect" href="../card/card.do?pageName=card"><i class="menu-icon mdi mdi-credit-card"></i><span>카드 추천</span></a>
 				</li>
 				<li id="consum" class="menu1 current">
 					<a class="waves-effect" href="../consum/consum.do?pageName=consum"><i class="menu-icon mdi mdi-currency-usd"></i><span>SHOW ME THE MONEY</span></a>
@@ -39,8 +39,8 @@
 				<li id="meet" class="menu1 current">
 					<a class="waves-effect" href="../meet/meet_main.do?pageName=meet"><i class="menu-icon mdi mdi-human-greeting"></i><span>일상-모임</span></a>
 				</li>
-				<li class="menu1 current">
-					<a class="waves-effect" href="../visit_food/visitFood.do"><i class="menu-icon mdi mdi-map-marker-radius"></i><span>혼자 놀자</span></a>
+				<li id="visit" class="menu1 current">
+					<a class="waves-effect" href="../visit_food/visitFood.do?pageName=visit"><i class="menu-icon mdi mdi-map-marker-radius"></i><span>혼자 놀자</span></a>
 				</li>				
 			</ul>
 			<!-- /.menu js__accordion -->
