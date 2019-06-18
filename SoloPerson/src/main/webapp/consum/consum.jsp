@@ -88,7 +88,7 @@
 			  yongdon = (slider3 * parseFloat(perc)).toFixed(2);
 			  var index = <c:out value="${i.index}"/>;
 			  var idname = "#yong"+index;
-			  $(idname).text(yongdon);
+			  $(idname).text(yongdon+"만원");
 		</c:forEach>
 	}
 	
