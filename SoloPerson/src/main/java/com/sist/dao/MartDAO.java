@@ -24,6 +24,14 @@ public class MartDAO {
 	{
 		return mapper.martDetailData(cno);
 	}
+	public List<Con_youtubeVO> youAllData()
+	{
+		return mapper.youAllData();
+	}
+	public List<Con_youtubeVO> youAllData1(int yno)
+	{
+		return mapper.youAllData1(yno);
+	}
 	
 
 }

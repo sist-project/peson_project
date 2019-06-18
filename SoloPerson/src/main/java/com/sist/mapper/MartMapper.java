@@ -14,5 +14,12 @@ public interface MartMapper {
 	
 	@Select("SELECT * FROM convenience WHERE cno=#{cno}")
 	public MartVO martDetailData(String cno);
+	
+	@Select("SELECT * FROM con_youtube")
+	public List<Con_youtubeVO> youAllData();
+	
+	@Select("SELECT * FROM con_youtube WHERE yno=#{yno}")
+	public List<Con_youtubeVO> youAllData1(int yno);
+	
 
 }

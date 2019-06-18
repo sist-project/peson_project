@@ -18,20 +18,42 @@ public class MartController {
 	private MartDAO dao;
 
 	@RequestMapping("mart/mart.do")
-	public String martController(String no, Model model) {
+	public String martController(String no,String yno, Model model) {
 
 		List<MartVO> list = new ArrayList<MartVO>();
+		List<Con_youtubeVO> clist =new ArrayList<Con_youtubeVO>();
 		
-		if (no == null) {
+		if (no == null) 
 			no="1";
+			
+		
+		if(no=="1")
+		{
+			list = dao.martAllData1(Integer.parseInt(no));
+		}
+		else if(no=="2")
+		{
+			list = dao.martAllData1(Integer.parseInt(no));
+		}
+		else if(no=="3")
+		{
+			list = dao.martAllData1(Integer.parseInt(no));
+		}
+		else
 			list = dao.martAllData1(Integer.parseInt(no));
 			
-		} else {
-			list = dao.martAllData1(Integer.parseInt(no));
-		
-		}
-		model.addAttribute("list", list);
+			
+			
 
+	
+			
+			clist = dao.youAllData();
+			
+
+		model.addAttribute("list", list);
+		model.addAttribute("mList","mart_list.jsp");
+		model.addAttribute("clist",clist);
+		
 		return "mart/mart";
 	}
 
@@ -40,6 +62,14 @@ public class MartController {
 		MartVO vo = dao.martDetailData(cno);
 		model.addAttribute("vo", vo);
 		return "mart/mart_detail";
+	}
+	
+	@RequestMapping("mart/youtube.do")
+	public String youtube(int yno, Model model) {
+		List<Con_youtubeVO> clist = dao.youAllData1(yno);
+		model.addAttribute("clist", clist);
+		
+		return "mart/ajax/youtube";
 	}
 
 }
