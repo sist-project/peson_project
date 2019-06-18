@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="../assets/fonts/fontello/fontello.css">
 
 
 <style type="text/css">
@@ -38,7 +39,9 @@
 #h{
 	width: 100px;
 }
-
+#up{
+	cursor: pointer;
+}
 .reserve-area{
 	height: 500px;
 }
@@ -66,6 +69,11 @@ $(function(){
 	            $('html, body').animate({scrollTop : offset.top});
 			}
 		})
+	});
+	
+	$('#up').click(function(){
+		var offset = $("#wrapper").offset();
+        $('html, body').animate({scrollTop : offset.top});
 	});
 });
 </script>
@@ -174,6 +182,10 @@ $(function(){
 						</div>
 					</c:forEach>
 					<!-- /.box-content -->	
+				</div>
+				
+				<div class="text-right">
+					<a id="up"><i class="ico icon-up-open"></i></a>
 				</div>
 			</div>
 		</div>	
