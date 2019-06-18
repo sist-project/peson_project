@@ -165,7 +165,7 @@ $(function() {
 							<area id="busan" si="부산광역시" class="sidoArea" shape="rect" coords="234,348,251,269">
 							<area id="jeollabukdo" si="전라북도" class="sidoArea" shape="rect" coords="77,259,91,279">
 							<area id="jeollanamdo" si="전라남도" class="sidoArea" shape="rect" coords="47,340,64,359">
-							<area id="gwangju" si="광주광역시" class="sidoArea" shape="rect" coords="67,314,82,332">
+							<area id="gwangjusi" si="광주광역시" class="sidoArea" shape="rect" coords="67,314,82,332">
 							<area id="jeju" si="제주도" class="sidoArea" shape="rect" coords="48,434,65,456">
 						</map>									
 					</div>

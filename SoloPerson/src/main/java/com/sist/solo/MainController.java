@@ -175,44 +175,14 @@ public class MainController {
 		List<SidoPercentVO> list = dao.southKoreaPercent(siName);
 		
 		List<SouthKoreaJsonVO> jsonList = new ArrayList<SouthKoreaJsonVO>();
-				
-	    /*String seoulStr = "{\"서울특별시\":[" + "{\"id\":\"도봉구\", \"coords\":\"216,17,244,58\", \"year2016\":\"23\", \"year2017\":\"23\"},"
-				 						 + "{\"id\":\"강북구\", \"coords\":\"191,57,224,76\", \"year2016\":\"29\", \"year2017\":\"31\"},"
-				 						 + "{\"id\":\"성북구\", \"coords\":\"202,102,230,114\", \"year2016\":\"31\", \"year2017\":\"31\"},"
-				 						 + "{\"id\":\"종로구\", \"coords\":\"171,119,199,134\", \"year2016\":\"38\", \"year2017\":\"38\"},"
-				 						 + "{\"id\":\"은평구\", \"coords\":\"128,76,156,90\", \"year2016\":\"25\", \"year2017\":\"26\"},"
-				 						 + "{\"id\":\"중랑구\", \"coords\":\"263,107,292,119\", \"year2016\":\"29\", \"year2017\":\"30\"},"
-				 						 + "{\"id\":\"동대문구\", \"coords\":\"227,122,263,136\", \"year2016\":\"36\", \"year2017\":\"37\"},"
-				 						 + "{\"id\":\"종로구\", \"coords\":\"169,119,199,134\", \"year2016\":\"38\", \"year2017\":\"38\"},"
-				 						 + "{\"id\":\"서대문구\", \"coords\":\"125,129,163,141\", \"year2016\":\"34\", \"year2017\":\"34\"},"
-				 						 + "{\"id\":\"강서구\", \"coords\":\"30,142,62,155\", \"year2016\":\"27\", \"year2017\":\"29\"},"
-				 						 + "{\"id\":\"마포구\", \"coords\":\"109,150,138,161\", \"year2016\":\"35\", \"year2017\":\"35\"},"
-				 					 	 + "{\"id\":\"중구\", \"coords\":\"185,147,207,159\", \"year2016\":\"38\", \"year2017\":\"39\"},"
-				 						 + "{\"id\":\"성동구\", \"coords\":\"220,155,250,167\", \"year2016\":\"32\", \"year2017\":\"32\"},"
-				 					 	 + "{\"id\":\"광진구\", \"coords\":\"261,160,290,172\", \"year2016\":\"36\", \"year2017\":\"37\"},"
-				 						 + "{\"id\":\"강동구\", \"coords\":\"306,157,335,168\", \"year2016\":\"25\", \"year2017\":\"26\"},"
-				 						 + "{\"id\":\"용산구\", \"coords\":\"169,171,197,186\", \"year2016\":\"35\", \"year2017\":\"36\"},"
-				 						 + "{\"id\":\"양천구\", \"coords\":\"66,189,96,201\", \"year2016\":\"20\", \"year2017\":\"20\"},"
-				 						 + "{\"id\":\"영등포구\", \"coords\":\"104,186,146,197\", \"year2016\":\"34\", \"year2017\":\"35\"},"
-				 						 + "{\"id\":\"동작구\", \"coords\":\"146,205,175,218\", \"year2016\":\"33\", \"year2017\":\"34\"},"
-				 						 + "{\"id\":\"구로구\", \"coords\":\"50,217,79,230\", \"year2016\":\"27\", \"year2017\":\"28\"},"
-				 						 + "{\"id\":\"금천구\", \"coords\":\"102,251,131,265\", \"year2016\":\"34\", \"year2017\":\"35\"},"
-				 						 + "{\"id\":\"서초구\", \"coords\":\"198,229,226,242\", \"year2016\":\"25\", \"year2017\":\"26\"},"
-				 						 + "{\"id\":\"강남구\", \"coords\":\"241,214,271,227\", \"year2016\":\"30\", \"year2017\":\"30\"},"
-				 						 + "{\"id\":\"송파구\", \"coords\":\"285,202,314,216\", \"year2016\":\"24\", \"year2017\":\"25\"},"
-				 						 + "{\"id\":\"관악구\", \"coords\":\"141,244,169,258\", \"year2016\":\"45\", \"year2017\":\"46\"},"
-				 						 + "{\"id\":\"노원구\", \"coords\":\"254,61,284,74\", \"year2016\":\"23\", \"year2017\":\"24\"} ]}";*/
-		
+
 		try {
 			JSONParser jsonParser = new JSONParser();
 			
 			Object obj = (JSONObject) jsonParser.parse(new FileReader("C:\\git\\peson_project\\SoloPerson\\src\\main\\webapp\\main\\sido.json"));
 			JSONObject jsonObject = (JSONObject) obj;
 			JSONArray arr3 = (JSONArray) jsonObject.get(siName);
-			
-			/*JSONObject jsonObj = (JSONObject) jsonParser.parse(seoulStr);
-			JSONArray arr3 = (JSONArray) jsonObj.get(siName);*/
-			
+		
 			for (int i = 0; i < arr3.size(); i++) {
 				JSONObject tempObj = (JSONObject) arr3.get(i);
 				SouthKoreaJsonVO vo = new SouthKoreaJsonVO();
