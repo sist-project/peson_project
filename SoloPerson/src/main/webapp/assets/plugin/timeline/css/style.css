@@ -82,17 +82,17 @@ Main components
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+ 
 }
 .cd-timeline-img img {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 70px;
+  height: 60px;
   position: relative;
   left: 50%;
   top: 50%;
-  margin-left: -12px;
-  margin-top: -12px;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .cd-timeline-img.cd-picture {
   background: #75ce66;
@@ -198,7 +198,7 @@ Main components
   color: #303e49;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-  font-size: 13px;
+  font-size: 20px;
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
@@ -241,7 +241,7 @@ Main components
     font-size: 16px;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -264,7 +264,9 @@ Main components
     width: 100%;
     left: 122%;
     top: 6px;
-    font-size: 16px;
+    font-size: 23px;
+    color: black;
+    font-style: bold;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;

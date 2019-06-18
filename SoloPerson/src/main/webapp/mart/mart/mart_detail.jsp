@@ -9,10 +9,6 @@
 <link rel="stylesheet" href="../assets/fonts/themify-icons/themify-icons.css">
 
 <style type="text/css">
-td, th {
-    color: black;
-    padding: 0;
-}
 .subtitle{
 	font-size: 20px;
 	color: #a8a8a8;	
@@ -36,7 +32,7 @@ td, th {
 .tra {
     text-align: right;
     width: 100px;
-    color: black;
+    color: gray;
 }
 
 </style>
@@ -70,7 +66,7 @@ td, th {
 											<td class="text-right">
 												<span class="ico ti-location-pin"></span> 설명
 											</td>
-											<td class="text-left" style="padding-left: 50px; padding-top: 50px;">
+											<td class="text-left" style="padding-left: 50px;">
 												${vo.ccontent}
 											</td>
 										</tr>
