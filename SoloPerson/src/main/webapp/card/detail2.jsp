@@ -12,7 +12,7 @@
 					<h3 class="box-title">${vo.cname }</h3>
 					<h5 class="box-title">${vo.bank } | ${vo.card }</h5>
 					<table class="table table-striped">
-						
+						 
 							<tr>
 							 <td colspan="2">
 							  <img src="${vo.poster }" width="200" height="120" style="margin-left: 110px">
