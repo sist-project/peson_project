@@ -25,7 +25,6 @@
 							 <th>ÇıÅÃÁ¤º¸</th>
 							 <td>${vo.benefit }</td>
 					        </tr>
-					       
 					</table>
 			</div>
 

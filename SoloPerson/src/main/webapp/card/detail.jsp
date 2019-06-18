@@ -42,11 +42,7 @@
 							 <th>혜택정보</th>
 							 <td>${vo.benefit }</td>
 					        </tr>
-					       <tr>
-					        <td class="text-center" colspan="2">
-					         <input type="button" value="목록" onclick="javascript:history.back()" class="btn btn-sm btn-danger">
-					        </td>
-					       </tr>
+					       
 					</table>
 			</div>
 
