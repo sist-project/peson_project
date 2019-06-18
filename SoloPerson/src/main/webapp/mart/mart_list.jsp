@@ -6,28 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+#
+</style>
 </head>
 <body>
 	<div class="col-xs-8" >
 	
-		<div class="main-content"  style="border: solid; margin-left: 0px;"">
+		<div class="main-content"  style="border: solid;margin-left: 0px;padding-top: 0px;">
 		
-			<section id="cd-timeline" class="cd-container"> 
+			<section id="cd-timeline" class="cd-container" style="
+    margin-left: 50px;
+    margin-right: 50px;
+"> 
 			
 				<c:forEach var="vo" items="${list }"  varStatus="status">
 	
-					<div class="cd-timeline-block">
+					<div class="cd-timeline-block" style="width: 930px;">
 						<div class="cd-timeline-img">
-							<img src="../mart/${status.index+1}.png" >
+							<img src="../mart/${status.index+1}.png" style="left: 70px;">
 						</div>
 						<!-- cd-timeline-img -->
 	
-						<div class="cd-timeline-content" style="width: 300px;">
-	
+						<div class="cd-timeline-content" style="width: 350px;height: 210.8px;">
+							${vo.cname }
 							<%-- <img src="${vo.img }" alt="Picture"> --%>
-							<img src="${vo.img }" width="180px" height="180px"> <a
+							<img src="${vo.img }" style="width:150px;height:150px;" id="goodimg"> <a
 								href="mart_detail.do?cno=${vo.cno }" class="cd-read-more">Read
-								more</a> <span class="cd-date">${vo.cname }</span>
+								more</a> 
 						</div>
 						<!-- cd-timeline-content -->
 					</div>

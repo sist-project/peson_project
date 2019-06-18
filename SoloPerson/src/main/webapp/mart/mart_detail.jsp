@@ -35,7 +35,8 @@ td, th {
 }
 .tra {
     text-align: right;
-    width: 100px;
+    width: 100px;+
+    
     color: black;
 }
 

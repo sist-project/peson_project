@@ -183,7 +183,7 @@ Main components
 }
 .cd-timeline-content {
   position: relative;
-  margin-left: 60px;
+  margin-left: 30px;
   background: white;
   border-radius: 0.25em;
   padding: 1em;
@@ -209,7 +209,7 @@ Main components
 }
 .cd-timeline-content .cd-read-more {
   float: right;
-  padding: .8em 1em;
+  padding: .4em 1em;
   background: #acb7c0;
   color: white;
   border-radius: 0.25em;
@@ -219,7 +219,7 @@ Main components
 }
 .cd-timeline-content .cd-date {
   float: left;
-  padding: .8em 0;
+  padding: .4em 0;
   opacity: .7;
 }
 .cd-timeline-content::before {
@@ -262,9 +262,9 @@ Main components
   .cd-timeline-content .cd-date {
     position: absolute;
     width: 100%;
-    left: 122%;
+    left: 110%;
     top: 6px;
-    font-size: 23px;
+    font-size: 18px;
     color: black;
     font-style: bold;
   }
@@ -274,7 +274,7 @@ Main components
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
     top: 24px;
     left: auto;
-    right: 100%;
+    right: 120%;
     border-color: transparent;
     border-right-color: white;
   }

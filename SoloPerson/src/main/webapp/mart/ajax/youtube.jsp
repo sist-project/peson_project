@@ -7,16 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
 
+</style>
 </head>
 <body>
 	<div class="pricing-table">
 	
 		<div class="col col-first">
  	
+ 	
 		<c:forEach var="vo" items="${clist}">
-			<div class="col col-five">${vo.url }</div>
+			<div class="video-container" style="width: 200px">${vo.url }</div>
 		</c:forEach>
+		
 	</div>
 	</div>
 

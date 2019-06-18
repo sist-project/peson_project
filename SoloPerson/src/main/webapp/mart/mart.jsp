@@ -64,19 +64,19 @@
 			<div class="navbar">
 				<div class="navbar-inner">
 					<ul>
-						<li><img src="../mart/TOP5.png"></li>
+						<li><img src="../mart/TOP5.png" style="width: 300px; height: 130px;"></li>
 						<li><a href="../mart/mart.do?no=1"
 							class="btn btn-sm btn-default"><img src="../mart/ramen1.png"
-								style="width: 150px; height: 150px;"></a></li>
+								style="width: 100px; height: 100px;"></a></li>
 						<li><a href="../mart/mart.do?no=2"
 							class="btn btn-sm btn-default"><img src="../mart/do1.png"
-								style="width: 150px; height: 150px;"></a></li>
+								style="width: 100px; height: 100px;"></a></li>
 						<li><a href="../mart/mart.do?no=3"
 							class="btn btn-sm btn-default"><img src="../mart/juice1.png"
-								style="width: 150px; height: 150px;"></a></li>
+								style="width: 100px; height: 100px;"></a></li>
 						<li><a href="../mart/mart.do?no=4"
 							class="btn btn-sm btn-default"><img src="../mart/snack1.png"
-								style="width: 150px; height: 150px;"></a></li>
+								style="width: 100px; height: 100px;"></a></li>
 
 					</ul>
 				</div>
@@ -91,7 +91,7 @@
 			<jsp:include page="${mList }"></jsp:include>
 			
 			<div class="col-xs-4"  style="border: solid;">
-			<img alt="" src="../mart/title.png">
+			<img alt="" src="../mart/title.png" style="width: 430px; height: 130px">
 			<div class="pricing-table">
 			
 	
